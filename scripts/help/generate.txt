@@ -1,0 +1,29 @@
+
+# Helpfile for generate #
+
+## Controller / Resource ##
+usage: 
+scripts/generate controller <Controllername(plural!)> <action>*
+
+example:
+scripts/generate controller Index index show
+creats application/controller/IndexController.php
+creats application/views/scripts/index/
+creats application/views/scripts/index/index.phtml
+creats application/views/scripts/index/show.phtml
+
+usage: scripts/generate resource <Controllername(plural!)> <additionalActions>*
+
+will generate an controller containing the actions
+index, show, new, edit, create, update, delete
+
+
+## Model ##
+usage:
+scripts/generate model <Modelname(singular!)>
+
+example:
+scripts/generate model Member
+
+creats application/models/Table/Members.php
+creats application/models/Member.php

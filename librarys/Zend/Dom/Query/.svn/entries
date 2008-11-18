@@ -1,0 +1,54 @@
+8
+
+dir
+12439
+http://framework.zend.com/svn/framework/standard/trunk/library/Zend/Dom/Query
+http://framework.zend.com/svn/framework
+
+
+
+2008-11-07T09:34:42.751123Z
+12358
+beberlei
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+44c647ce-9c0f-0410-b52a-842ac1e357ba
+
+Result.php
+file
+
+
+
+
+2008-11-08T18:29:33.000000Z
+bee83e45d6685b6f9ff67dc88fa2f140
+2008-11-07T09:34:42.751123Z
+12358
+beberlei
+has-props
+
+Css2Xpath.php
+file
+
+
+
+
+2008-11-08T18:29:33.000000Z
+668f174290ef1a78ddc5ffb31d828113
+2008-08-24T21:06:20.652440Z
+11013
+thomas
+has-props
+

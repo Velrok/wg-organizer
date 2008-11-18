@@ -1,0 +1,21 @@
+<div class="post">
+<h1>Einkäufe</h1>
+<h2>Die letzten <?= $this->amount ?> Einkäufte</h2>
+
+<div class="body">
+<table>
+  <tr>
+  	<th>Preis</th>
+    <th>Beschreibung</th>
+    <th>Datum</th>
+  </tr>
+  <? foreach($this->resentBuyings as $buying): ?>
+  <tr>
+    <td><?= sprintf("%.2f", ($buying->price / 100)); ?>€</td>
+    <td><?= $buying->description; ?></td>
+    <td><? $date = new Zend_Date($buying->bought_at); echo $date->toString('EEEE dd.MM.YY HH:mm');?> Uhr</td>
+  </tr>
+  <? endforeach; ?>
+</table>
+</div>
+</div>

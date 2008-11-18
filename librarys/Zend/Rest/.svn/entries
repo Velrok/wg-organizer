@@ -1,0 +1,73 @@
+8
+
+dir
+12439
+http://framework.zend.com/svn/framework/standard/trunk/library/Zend/Rest
+http://framework.zend.com/svn/framework
+
+
+
+2008-11-07T12:43:19.725087Z
+12366
+beberlei
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+44c647ce-9c0f-0410-b52a-842ac1e357ba
+
+Client.php
+file
+
+
+
+
+2008-11-08T18:30:10.000000Z
+4e42d611d79cfe1814b50cf87ecc206e
+2008-10-27T04:36:09.906201Z
+12138
+yoshida@zend.co.jp
+has-props
+
+Exception.php
+file
+
+
+
+
+2008-11-08T18:30:10.000000Z
+b6c3c3a66c14a13d559178606857eed7
+2008-02-16T10:58:39.742447Z
+8064
+thomas
+has-props
+
+Server
+dir
+
+Server.php
+file
+
+
+
+
+2008-11-08T18:30:10.000000Z
+cf8570a8b0d9115ca56b2e567d0375fc
+2008-11-07T12:43:19.725087Z
+12366
+beberlei
+has-props
+
+Client
+dir
+

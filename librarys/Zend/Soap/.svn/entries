@@ -1,0 +1,91 @@
+8
+
+dir
+12439
+http://framework.zend.com/svn/framework/standard/trunk/library/Zend/Soap
+http://framework.zend.com/svn/framework
+
+
+
+2008-11-08T09:24:28.846029Z
+12417
+beberlei
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+44c647ce-9c0f-0410-b52a-842ac1e357ba
+
+Wsdl.php
+file
+
+
+
+
+2008-11-08T18:29:37.000000Z
+b8973ed95f8ae76046db0ddaa6a0ed0c
+2008-11-01T17:54:31.306691Z
+12247
+beberlei
+has-props
+
+Client.php
+file
+
+
+
+
+2008-11-08T18:29:37.000000Z
+dc5e9802eda2eaf01201b314508f2282
+2008-10-01T10:09:10.493305Z
+11560
+yoshida@zend.co.jp
+
+Server
+dir
+
+AutoDiscover
+dir
+
+Wsdl
+dir
+
+Server.php
+file
+
+
+
+
+2008-11-08T18:29:37.000000Z
+af29e70be5143f4cde0cd30942d1e853
+2008-11-05T10:16:54.683343Z
+12294
+beberlei
+has-props
+
+AutoDiscover.php
+file
+
+
+
+
+2008-11-08T18:29:37.000000Z
+7bb6c0d84618c2e3b616816c15e033ff
+2008-11-07T08:20:41.479908Z
+12355
+beberlei
+has-props
+
+Client
+dir
+

@@ -1,0 +1,79 @@
+8
+
+dir
+12439
+http://framework.zend.com/svn/framework/standard/trunk/library/Zend/Amf/Value
+http://framework.zend.com/svn/framework
+
+
+
+2008-10-07T17:42:55.229098Z
+11720
+matthew
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+44c647ce-9c0f-0410-b52a-842ac1e357ba
+
+MessageHeader.php
+file
+
+
+
+
+2008-11-08T18:30:08.000000Z
+c4699efd63fff225c4d711a16afe47f0
+2008-10-07T17:42:40.270154Z
+11719
+matthew
+
+ByteArray.php
+file
+
+
+
+
+2008-11-08T18:30:08.000000Z
+10ed8e480e68e09551e7aa7a792e4566
+2008-10-03T19:44:26.421849Z
+11659
+matthew
+
+MessageBody.php
+file
+
+
+
+
+2008-11-08T18:30:08.000000Z
+a3c8ec001ed3268b65568bdef5d7d14a
+2008-10-07T17:42:55.229098Z
+11720
+matthew
+
+TraitsInfo.php
+file
+
+
+
+
+2008-11-08T18:30:08.000000Z
+6963ee890482032600bf5c7eeba01586
+2008-10-03T19:44:26.421849Z
+11659
+matthew
+
+Messaging
+dir
+

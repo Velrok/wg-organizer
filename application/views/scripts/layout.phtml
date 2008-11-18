@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content="description"/>
+<meta name="keywords" content="keywords"/> 
+<meta name="author" content="author"/> 
+<title><?= $this->pageTitle ?></title>
+<link rel="stylesheet" href="<?= $this->basepath ?>style.css" type="text/css" media="screen" />
+</head>
+
+<body style="<?= $this->randomBackground(4); ?>">
+
+<!-- Pictures from:
+1.jpg from rlihm		(http://www.flickr.com/photos/rlihm/)
+2.jpg from abbyladybug 	(http://www.flickr.com/photos/abbyladybug/) 
+3.jpg from crashtron	(http://www.flickr.com/photos/crashtron/)-->
+
+<div id="container">
+
+	<div id="top">
+
+			<!-- <img align="right" src="<?= $this->basepath; ?>/img/kitchen.jpeg"/>  -->
+		<div class="left">
+			<h1 id="site_title"><?= $this->pageTitle ?></h1>
+			<div id="site_description">Angemeldet als <?= $this->currentResident->email; ?></div>
+		</div>
+
+		<!-- <a href="#" class="button feed right"><span></span></a>  -->
+		
+
+		<div class="clearer"></div>
+
+	</div>
+
+	<div class="path" id="nav">
+
+		<?= $this->menue($this->mainMenue); ?>
+
+		<div class="clearer"></div>
+
+	</div>
+
+	<div id="main">
+
+		<div class="left" id="main_left">	
+
+				<?= $this->layout()->content ?>
+			
+		</div>
+
+		<? if($this->subMenue): ?>
+		<div class="right" id="main_right">
+			
+			<div id="sidebar">
+				
+				<?= $this->menue($this->subMenue, array('class' => 'content')); ?>
+				
+			</div>
+		</div>
+		<?endif; ?>
+
+		<div class="clearer"></div>
+
+	</div>
+
+	<div id="footer">
+
+		<div class="left">
+			&copy; 2007 <a href="#">Website.com</a> | <a href="#top">Go to top</a>
+		</div>
+
+		<div class="right">Design by <a href="http://arcsin.se/">Arcsin</a> <a href="http://templates.arcsin.se/">Web Templates</a></div>
+
+		<div class="clearer"></div>
+	
+	</div>
+
+</div>
+</body>
+</html>
+
+
+

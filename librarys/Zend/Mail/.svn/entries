@@ -1,0 +1,95 @@
+8
+
+dir
+12439
+http://framework.zend.com/svn/framework/standard/trunk/library/Zend/Mail
+http://framework.zend.com/svn/framework
+
+
+
+2008-11-07T23:58:38.018869Z
+12395
+nico
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+44c647ce-9c0f-0410-b52a-842ac1e357ba
+
+Protocol
+dir
+
+Message
+dir
+
+Storage
+dir
+
+Exception.php
+file
+
+
+
+
+2008-11-08T18:30:02.000000Z
+4c6004656249f107804507895cc0ea23
+2008-02-16T10:58:39.742447Z
+8064
+thomas
+has-props
+
+Part
+dir
+
+Message.php
+file
+
+
+
+
+2008-11-08T18:30:02.000000Z
+3d8c9688ba56e8270f04bd23114e9593
+2008-03-30T19:35:47.448670Z
+9099
+thomas
+has-props
+
+Storage.php
+file
+
+
+
+
+2008-11-08T18:30:02.000000Z
+85954aeda697328f4bd874b118e282d1
+2008-03-30T19:35:47.448670Z
+9099
+thomas
+has-props
+
+Transport
+dir
+
+Part.php
+file
+
+
+
+
+2008-11-08T18:30:02.000000Z
+32066acf8281d63cbd76d5f32494f7ce
+2008-10-03T15:13:30.570856Z
+11652
+yoshida@zend.co.jp
+has-props
+

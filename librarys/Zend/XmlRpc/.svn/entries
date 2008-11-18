@@ -1,0 +1,134 @@
+8
+
+dir
+12439
+http://framework.zend.com/svn/framework/standard/trunk/library/Zend/XmlRpc
+http://framework.zend.com/svn/framework
+
+
+
+2008-11-07T10:09:41.006482Z
+12360
+beberlei
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+44c647ce-9c0f-0410-b52a-842ac1e357ba
+
+Fault.php
+file
+
+
+
+
+2008-11-08T18:30:05.000000Z
+54e0d5d3d7c2be35c6af712ccd6d7ac0
+2008-11-07T09:11:57.774365Z
+12357
+thomas
+has-props
+
+Value.php
+file
+
+
+
+
+2008-11-08T18:30:05.000000Z
+0ca790875eea5ece11a0e02eef96cb0c
+2008-03-30T18:52:31.281094Z
+9095
+thomas
+has-props
+
+Client.php
+file
+
+
+
+
+2008-11-08T18:30:05.000000Z
+31866d2cd84990aac042303433063493
+2008-11-07T10:09:41.006482Z
+12360
+beberlei
+has-props
+
+Exception.php
+file
+
+
+
+
+2008-11-08T18:30:05.000000Z
+cdc7344efa4ed97a5bfaa43952e730a1
+2008-02-16T10:58:39.742447Z
+8064
+thomas
+has-props
+
+Response.php
+file
+
+
+
+
+2008-11-08T18:30:05.000000Z
+3f7897d883fce068656a6326dc7efd80
+2008-02-16T10:58:39.742447Z
+8064
+thomas
+has-props
+
+Server
+dir
+
+Request
+dir
+
+Value
+dir
+
+Server.php
+file
+
+
+
+
+2008-11-08T18:30:05.000000Z
+da4a5c2b9c3cb350cc5941b2268c5f3b
+2008-10-30T13:34:35.559735Z
+12195
+matthew
+has-props
+
+Client
+dir
+
+Response
+dir
+
+Request.php
+file
+
+
+
+
+2008-11-08T18:30:05.000000Z
+d16737eddd507e4bed3bc30c48d27bbe
+2008-03-22T17:17:05.576899Z
+8997
+matthew
+has-props
+

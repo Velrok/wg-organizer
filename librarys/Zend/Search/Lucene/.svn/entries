@@ -1,0 +1,155 @@
+8
+
+dir
+12439
+http://framework.zend.com/svn/framework/standard/trunk/library/Zend/Search/Lucene
+http://framework.zend.com/svn/framework
+
+
+
+2008-10-27T15:50:47.987693Z
+12144
+alexander
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+44c647ce-9c0f-0410-b52a-842ac1e357ba
+
+Analysis
+dir
+
+Storage
+dir
+
+Document.php
+file
+
+
+
+
+2008-11-08T18:30:09.000000Z
+961123dbc93000f03ebe3dfc9d357ec0
+2008-07-26T11:33:10.950892Z
+10465
+alexander
+has-props
+
+Exception.php
+file
+
+
+
+
+2008-11-08T18:30:09.000000Z
+4f7af315a3fc3b8fcd2259fbbd78a0d7
+2008-02-16T10:58:39.742447Z
+8064
+thomas
+has-props
+
+Search
+dir
+
+Interface.php
+file
+
+
+
+
+2008-11-08T18:30:09.000000Z
+41743669cc145308a30e58f48d320c47
+2008-10-27T15:50:47.987693Z
+12144
+alexander
+
+Index
+dir
+
+Proxy.php
+file
+
+
+
+
+2008-11-08T18:30:09.000000Z
+d6b3c95fcd646d0990981e80d6f837a4
+2008-10-27T15:50:47.987693Z
+12144
+alexander
+
+FSMAction.php
+file
+
+
+
+
+2008-11-08T18:30:09.000000Z
+95acc5883096ecfa60afcd79c261b4d5
+2008-02-16T10:58:39.742447Z
+8064
+thomas
+
+Field.php
+file
+
+
+
+
+2008-11-08T18:30:09.000000Z
+570476ea18ea2c9c25873cf4751afe40
+2008-10-27T15:50:47.987693Z
+12144
+alexander
+has-props
+
+LockManager.php
+file
+
+
+
+
+2008-11-08T18:30:09.000000Z
+3952cb312134eca29afabfe9c530cffd
+2008-10-27T15:50:47.987693Z
+12144
+alexander
+
+FSM.php
+file
+
+
+
+
+2008-11-08T18:30:09.000000Z
+c382a51f82dc477dd5645dd9c273ab15
+2008-02-16T10:58:39.742447Z
+8064
+thomas
+
+PriorityQueue.php
+file
+
+
+
+
+2008-11-08T18:30:09.000000Z
+c7b000e7f09f5f5b2d3467b3628f63bc
+2008-02-16T10:58:39.742447Z
+8064
+thomas
+has-props
+
+Document
+dir
+

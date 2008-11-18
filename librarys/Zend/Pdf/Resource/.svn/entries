@@ -1,0 +1,73 @@
+8
+
+dir
+12439
+http://framework.zend.com/svn/framework/standard/trunk/library/Zend/Pdf/Resource
+http://framework.zend.com/svn/framework
+
+
+
+2008-02-16T10:58:39.742447Z
+8064
+thomas
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+44c647ce-9c0f-0410-b52a-842ac1e357ba
+
+ImageFactory.php
+file
+
+
+
+
+2008-11-08T18:29:39.000000Z
+4a30077a55f4bf9977ca26d8a3a15848
+2008-02-16T10:58:39.742447Z
+8064
+thomas
+has-props
+
+Image
+dir
+
+Font
+dir
+
+Image.php
+file
+
+
+
+
+2008-11-08T18:29:39.000000Z
+140e8d881391bab5d97fa27838187b57
+2008-02-16T10:58:39.742447Z
+8064
+thomas
+has-props
+
+Font.php
+file
+
+
+
+
+2008-11-08T18:29:39.000000Z
+b55c1f915a4be29d1c3854fe5b604bb7
+2008-02-16T10:58:39.742447Z
+8064
+thomas
+has-props
+

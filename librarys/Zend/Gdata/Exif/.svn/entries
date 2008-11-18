@@ -1,0 +1,57 @@
+8
+
+dir
+12439
+http://framework.zend.com/svn/framework/standard/trunk/library/Zend/Gdata/Exif
+http://framework.zend.com/svn/framework
+
+
+
+2008-11-08T03:16:43.093794Z
+12403
+tjohns
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+44c647ce-9c0f-0410-b52a-842ac1e357ba
+
+Entry.php
+file
+
+
+
+
+2008-11-08T18:29:41.000000Z
+bed90954bc0cc1de0cd064de4e8c3cfe
+2008-11-08T03:16:43.093794Z
+12403
+tjohns
+has-props
+
+Feed.php
+file
+
+
+
+
+2008-11-08T18:29:41.000000Z
+d22b71549facd45876c87d40cd3eff2b
+2008-11-08T01:24:51.783007Z
+12397
+rboyd
+has-props
+
+Extension
+dir
+

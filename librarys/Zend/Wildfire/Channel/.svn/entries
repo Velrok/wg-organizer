@@ -1,0 +1,52 @@
+8
+
+dir
+12439
+http://framework.zend.com/svn/framework/standard/trunk/library/Zend/Wildfire/Channel
+http://framework.zend.com/svn/framework
+
+
+
+2008-08-31T03:58:25.075681Z
+11163
+cadorn
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+44c647ce-9c0f-0410-b52a-842ac1e357ba
+
+HttpHeaders.php
+file
+
+
+
+
+2008-11-08T18:30:04.000000Z
+f88b4dec2ee5ee88ca719b1092f16a9a
+2008-08-31T03:58:25.075681Z
+11163
+cadorn
+
+Interface.php
+file
+
+
+
+
+2008-11-08T18:30:04.000000Z
+f7ebcdad6f8711b03b4513cc7bfd5532
+2008-07-23T05:40:41.285300Z
+10292
+cadorn
+

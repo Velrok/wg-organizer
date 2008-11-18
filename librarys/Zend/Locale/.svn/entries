@@ -1,0 +1,86 @@
+8
+
+dir
+12439
+http://framework.zend.com/svn/framework/standard/trunk/library/Zend/Locale
+http://framework.zend.com/svn/framework
+
+
+
+2008-10-21T17:19:43.094473Z
+12057
+thomas
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+44c647ce-9c0f-0410-b52a-842ac1e357ba
+
+Data.php
+file
+
+
+
+
+2008-11-08T18:30:01.000000Z
+e3ca71a2c8197692c063940cd2cf08d5
+2008-10-21T17:19:43.094473Z
+12057
+thomas
+has-props
+
+Math.php
+file
+
+
+
+
+2008-11-08T18:30:01.000000Z
+27baf07f19ea5e1cb9dbf8e77192326d
+2008-03-06T18:36:46.507872Z
+8584
+thomas
+has-props
+
+Exception.php
+file
+
+
+
+
+2008-11-08T18:30:01.000000Z
+b278f2d3f4d35566a405ad7d7226f011
+2008-02-16T10:58:39.742447Z
+8064
+thomas
+has-props
+
+Data
+dir
+
+Math
+dir
+
+Format.php
+file
+
+
+
+
+2008-11-08T18:30:01.000000Z
+c07b2aa2e9639ba396699b140d705ad7
+2008-10-21T17:19:43.094473Z
+12057
+thomas
+has-props
+
