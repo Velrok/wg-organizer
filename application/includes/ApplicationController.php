@@ -23,13 +23,25 @@ class ApplicationController extends Zend_Controller_Action
 		$this->view->basepath = Zend_Registry::get('configuration')->basepath;
 		$this->view->pageTitle = "WG Organizer";
 		
+		$this->view->currentResident = $this->getCurrentResident();
+		
 		$this->view->mainMenue = $this->getMainMenue();
 		$this->view->subMenue = $this->getSubMenue();
 		
-		$this->view->currentResident = $this->getCurrentResident();
+//		Zend_Debug::dump($this->getCurrentResident());
 	}
 	
 	public function getMainMenue()
+	{
+		// if you arn't logged in, just show links to the pubilc resources
+		if ($this->getCurrentResident()){
+			return $this->residentsMainMenue();
+		} else {
+			return $this->guestMainMenue();
+		}
+	}
+	
+	protected function residentsMainMenue()
 	{
 		$menue = array();
 		
@@ -47,24 +59,30 @@ class ApplicationController extends Zend_Controller_Action
 		);
 		$menue[] = $link;
 		
-//		$link = array(
-//			'label' => 'Gemeinschaftskasse',
-//			'controller' => 'moneypool',
-//			'action' => 'index',
-//		);
-//		$menue[] = $link;
-		
-		$link = array(
-			'label' => 'Anmelden',
-			'controller' => 'session',
-			'action' => 'new',
-		);
-		$menue[] = $link;
-		
 		$link = array(
 			'label' => 'Abmelden',
 			'controller' => 'session',
 			'action' => 'destroy',
+		);
+		$menue[] = $link;
+		
+		return $menue;
+	}
+	
+	protected function guestMainMenue(){
+		$menue[] = array();
+		
+		$link = array(
+			'label' => 'Startseite',
+			'controller' => 'index',
+			'action' => 'index',
+		);
+		$menue[] = $link;
+			
+		$link = array(
+			'label' => 'Anmelden',
+			'controller' => 'session',
+			'action' => 'new',
 		);
 		$menue[] = $link;
 		

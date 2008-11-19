@@ -44,7 +44,6 @@ class SessionController extends ApplicationController
 			
 		} else {
 			$this->_forward('new');
-//			$this->redirect('session', 'new');
 		}
 	}
 	
