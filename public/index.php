@@ -4,7 +4,7 @@
 // to the include_path, so that PHP can find our Zend Framework classes.
 define('APPLICATION_PATH', realpath(dirname(__FILE__) . '/../application/'));
 set_include_path(
-    APPLICATION_PATH . '/../librarys'
+    APPLICATION_PATH . '/../libraries'
     . PATH_SEPARATOR . APPLICATION_PATH.'/forms'
     . PATH_SEPARATOR . APPLICATION_PATH.'/models'
     . PATH_SEPARATOR . APPLICATION_PATH.'/includes'
