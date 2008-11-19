@@ -73,7 +73,7 @@ class BuyingsController extends ApplicationController
 		$menue = array();
 		
 		$link = array(
-			'label' => 'Einkäufe eintrage',
+			'label' => 'Einkäufe eintragen',
 			'controller' => 'buyings',
 			'action' => 'new',
 		);
