@@ -52,4 +52,4 @@ CREATE TABLE `Residents` (
 -- Daten für Tabelle `Residents`
 -- 
 
-INSERT INTO `Residents` VALUES (1, 'admin@wg.de', '81dc9bdb52d04dc20036dbd8313ed055');
+INSERT INTO `Residents` VALUES (1, 'admin@wg.de', md5('change_on_install'));
