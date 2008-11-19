@@ -48,6 +48,10 @@ code {
 	margin: 1em 0;
 }
 
+.danger {
+	color: red;
+}
+
 ul,ol {margin: 0 0 1em 1.4em;}
 
 fieldset {padding: 12px 10px; background: #EFE; color: #232; border: 1px solid #DED; margin-bottom: 1em;}

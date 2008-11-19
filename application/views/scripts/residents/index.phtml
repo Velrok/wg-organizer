@@ -1,0 +1,15 @@
+<h1>Bewohner Übersicht</h1>
+
+<ul>
+	<?foreach($this->residents as $resident): ?>
+	<li>
+	<?= $resident->email; ?>
+	<a href="<?= $this->url(array('action' => 'edit', 'id' => $resident->id)); ?>">
+		&lt;bearbeiten&gt;
+	</a>
+	<a class="danger" href="<?= $this->url(array('action' => 'destroy', 'id' => $resident->id)); ?>">
+		&lt;rauswerfen&gt;
+	</a>
+	</li>
+	<?endforeach; ?>
+</ul>
