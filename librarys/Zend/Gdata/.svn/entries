@@ -1,320 +1,0 @@
-8
-
-dir
-12439
-http://framework.zend.com/svn/framework/standard/trunk/library/Zend/Gdata
-http://framework.zend.com/svn/framework
-
-
-
-2008-11-08T03:16:43.093794Z
-12403
-tjohns
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-44c647ce-9c0f-0410-b52a-842ac1e357ba
-
-Exif.php
-file
-
-
-
-
-2008-11-08T18:29:44.000000Z
-ce7a704a5d0e9365dc105115aa92f309
-2008-11-08T01:24:51.783007Z
-12397
-rboyd
-has-props
-
-Gbase
-dir
-
-Entry.php
-file
-
-
-
-
-2008-11-08T18:29:44.000000Z
-72e3ce496334af23afa9ac11f3457f08
-2008-11-08T03:16:43.093794Z
-12403
-tjohns
-
-Feed.php
-file
-
-
-
-
-2008-11-08T18:29:44.000000Z
-2025adf38a22a4ca6596211b447ded28
-2008-11-08T03:16:43.093794Z
-12403
-tjohns
-
-Exif
-dir
-
-Calendar.php
-file
-
-
-
-
-2008-11-08T18:29:44.000000Z
-c66a1278c73e2599c15de327a5fcae15
-2008-11-08T01:24:51.783007Z
-12397
-rboyd
-
-Gapps.php
-file
-
-
-
-
-2008-11-08T18:29:44.000000Z
-fa121245ff12870b9609be2105aa7ede
-2008-11-08T03:16:43.093794Z
-12403
-tjohns
-
-Extension.php
-file
-
-
-
-
-2008-11-08T18:29:44.000000Z
-4c034e8da2ead9f71e994e4bdeaace09
-2008-02-16T10:58:39.742447Z
-8064
-thomas
-
-Media.php
-file
-
-
-
-
-2008-11-08T18:29:44.000000Z
-4fb6c1a9f0554893ea9c792e5cab6ebb
-2008-11-08T01:24:51.783007Z
-12397
-rboyd
-has-props
-
-App.php
-file
-
-
-
-
-2008-11-08T18:29:44.000000Z
-f29944f5828ea6c6a4544fb860b9c7c0
-2008-11-08T03:16:43.093794Z
-12403
-tjohns
-
-Calendar
-dir
-
-Gapps
-dir
-
-DublinCore.php
-file
-
-
-
-
-2008-11-08T18:29:44.000000Z
-8bc33c437892734679735689553c1180
-2008-11-08T01:24:51.783007Z
-12397
-rboyd
-has-props
-
-Extension
-dir
-
-Docs.php
-file
-
-
-
-
-2008-11-08T18:29:44.000000Z
-0174dace7fdb065419b55ad1455ddba8
-2008-11-08T01:24:51.783007Z
-12397
-rboyd
-has-props
-
-Media
-dir
-
-Spreadsheets.php
-file
-
-
-
-
-2008-11-08T18:29:44.000000Z
-01c9a434fe836d47f10e9e21257bb1c8
-2008-11-08T01:24:51.783007Z
-12397
-rboyd
-
-App
-dir
-
-YouTube.php
-file
-
-
-
-
-2008-11-08T18:29:44.000000Z
-075456e70fba43a3f647a30682b8da5d
-2008-11-08T02:23:26.355336Z
-12400
-jhartmann
-
-Kind
-dir
-
-DublinCore
-dir
-
-Docs
-dir
-
-Spreadsheets
-dir
-
-Query.php
-file
-
-
-
-
-2008-11-08T18:29:44.000000Z
-8d9c45261b4d08ae398419f2da15c747
-2008-02-16T10:58:39.742447Z
-8064
-thomas
-
-YouTube
-dir
-
-ClientLogin.php
-file
-
-
-
-
-2008-11-08T18:29:44.000000Z
-cff6d7fb4277eef3f1cf0dc6da3c15be
-2008-06-30T21:27:02.687869Z
-9846
-jhartmann
-
-Geo.php
-file
-
-
-
-
-2008-11-08T18:29:44.000000Z
-8914d7f9e0c071da7cc5060e308fb1ee
-2008-11-08T01:24:51.783007Z
-12397
-rboyd
-has-props
-
-AuthSub.php
-file
-
-
-
-
-2008-11-08T18:29:44.000000Z
-f308175bb4c25fd4673b46b814e22919
-2008-09-29T23:27:11.587093Z
-11547
-jhartmann
-
-Photos.php
-file
-
-
-
-
-2008-11-08T18:29:44.000000Z
-9757d5771e3740f618896f154ec5fc74
-2008-11-08T01:24:51.783007Z
-12397
-rboyd
-has-props
-
-Books.php
-file
-
-
-
-
-2008-11-08T18:29:44.000000Z
-c51714147b334ea33c686b25304afdb7
-2008-11-08T01:24:51.783007Z
-12397
-rboyd
-has-props
-
-HttpClient.php
-file
-
-
-
-
-2008-11-08T18:29:44.000000Z
-463cc6b5a8eeff1d63ede4c7516b67c9
-2008-09-23T14:57:44.049073Z
-11494
-rboyd
-
-Gbase.php
-file
-
-
-
-
-2008-11-08T18:29:44.000000Z
-1495ee7f2295d1b0e650cc1f49ff8b5f
-2008-11-08T01:24:51.783007Z
-12397
-rboyd
-
-Geo
-dir
-
-Photos
-dir
-
-Books
-dir
-
