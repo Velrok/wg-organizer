@@ -1,0 +1,13 @@
+
+
+
+#messages {
+  border:1px grey solid;
+  padding-top:10px;	
+  padding-left:8px;
+  margin-bottom:10px;
+}
+#messages ul {
+  list-style-image:none;
+  list-style-type:square;	
+}
