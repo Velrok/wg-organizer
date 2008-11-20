@@ -9,6 +9,7 @@
 
 class ApplicationController extends Zend_Controller_Action  
 {
+
 	/**
 	 * creats a new ApplicationController 
 	 *
@@ -27,6 +28,8 @@ class ApplicationController extends Zend_Controller_Action
 		
 		$this->view->mainMenue = $this->getMainMenue();
 		$this->view->subMenue = $this->getSubMenue();
+		
+		$this->view->flashMessenger = $this->_helper->getHelper('FlashMessenger');
 		
 //		Zend_Debug::dump($this->getCurrentResident());
 	}
@@ -113,13 +116,24 @@ class ApplicationController extends Zend_Controller_Action
 	}
 	
 	/**
+	 * redirects to the given controller and action
+	 * 
+	 * @return void
+	 */
+	protected function redirect($controller, $action, array $options = array())
+	{
+		$url .= "/$controller/$action";
+		return $this->_redirect($url, $options);
+	}
+	
+	/**
 	 * adds $message to the FlashMessage helper
 	 * 
 	 * @param string $message
 	 */
 	protected function flash($message)
 	{
-		return $this->_helper->FlashMessenger($message);
+		return $this->view->flashMessenger->addMessage($message);
 	}
 	
 	/**

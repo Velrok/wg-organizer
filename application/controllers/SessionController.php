@@ -16,9 +16,12 @@ class SessionController extends ApplicationController
 	public function newAction(){
 		$form = $this->getLoginForm();
 		
-		if ($_POST) $form->isValid($_POST);
+		if ($_POST) {
+			$form->isValid($_POST);
+		}
 		
 		$this->view->loginForm = $form;
+		$this->render('new');
 	}
 
 	/**
@@ -29,21 +32,22 @@ class SessionController extends ApplicationController
 		$this->requirePost();
 		
 		$form = $this->getLoginForm();
-			
+		
 		if ($form->isValid($_POST)){
 			$resident = Table_Residents::getInstance()->findResidentByEmailAndPasswordhash($form->getValue('email'), $form->getValue('password'));
+
 			
 			if ($resident instanceof Resident){
 				$s = new Zend_Session_Namespace();
 				$s->currentResidentId = $resident->id;
-				$this->_redirect('/');
+				$this->redirect('index', 'index');
 			} else {
 				$this->flash("Email oder Password falsch!");
-				$this->_forward('new');
+				$this->_redirect('session/new');
 			}
 			
 		} else {
-			$this->_forward('new');
+			$this->_redirect('session/new');
 		}
 	}
 	
