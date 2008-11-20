@@ -130,12 +130,47 @@ function resource($argv){
 	$restfullArgs[] = 'update';
 	$restfullArgs[] = 'destroy';
 	
-	// adding other actions
-	for($i = 3; $i < count($argv); $i++){
-		$restfullArgs[] = $argv[$i];
+	if (!$argv[2]) {
+		print_ln("no resource name given");
+		exit;
+	}
+
+	$controllerName = mb_convert_case($argv[2], MB_CASE_TITLE);
+	// creating controller file
+	$controllerFile = "application/controllers/".$controllerName."Controller.php";
+	if (file_exists($controllerFile)) {
+		print_ln("exists: ".$controllerFile);
+	} else {
+		touch($controllerFile);
+		file_put_contents($controllerFile, zendControllerCodeForControllerNamed($controllerName, $restfullArgs));
+		print_ln("create: ".$controllerFile);
+	}
+
+
+	// creating view script
+	$viewScriptDir = "application/views/scripts/".strtolower($controllerName);
+	if(file_exists($viewScriptDir)){
+		print_ln("exists: ".$viewScriptDir);
+	} else {
+		mkdir($viewScriptDir);
+		print_ln("create: ".$viewScriptDir);
 	}
 	
-	controller($restfullArgs);
+	$restfullActionsWithOutput = array();
+	$restfullActionsWithOutput[] = 'index';
+	$restfullActionsWithOutput[] = 'show';
+	$restfullActionsWithOutput[] = 'new';
+	$restfullActionsWithOutput[] = 'edit';
+	
+	foreach($restfullActionsWithOutput as $outputAction){
+		$viewScriptFile = $viewScriptDir."/".strtolower($outputAction.".phtml");
+		if (file_exists($viewScriptFile)){
+			print_ln("exists: ".$viewScriptFile);
+		} else {
+			touch($viewScriptFile);
+			print_ln("create: ".$viewScriptFile);
+		}
+	}
 }
 
 
