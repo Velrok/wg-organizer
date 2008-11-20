@@ -78,6 +78,7 @@ class ResidentsController extends ApplicationController
 					$mail->addTo($newResident->email)
 					->setSubject("Du wurdest in der WG aufgenomme!")
 					->setBodyText($mailText);
+					$mail->send();
 
 					$this->flash('Der Bewohner mit der Email Addresse '.$newResident->email.' wurde erfolgreich eingetragen.');
 					$this->flash('Ein generiertes Passwort wurde per Email zugeschickt.');
