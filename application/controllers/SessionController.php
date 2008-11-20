@@ -66,7 +66,7 @@ class SessionController extends ApplicationController
 	private function getLoginForm()
 	{
 		$form = new Zend_Form();
-		$form->setAction($this->getRequest()->getBaseUrl()."/session/create")
+		$form->setAction("session/create")
 			->setMethod('post');
 			
 		$email = new Zend_Form_Element_Text(array(

@@ -45,4 +45,20 @@ class Table_Residents extends BaseTable {
 			return null;
 		}
 	}
+	
+	/**
+	 * @param string email
+	 * @return boolean
+	 */
+	public function residentExists($email)
+	{
+		$select = $this->select()
+			->where('email = ?', $email);
+		$rows = $this->fetchAll($select);
+		if($rows->count() > 0){
+			return true;
+		} else {
+			return false;
+		}
+	}
 }//endClass
