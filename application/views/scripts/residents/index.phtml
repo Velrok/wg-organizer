@@ -3,13 +3,15 @@
 <ul>
 	<?foreach($this->residents as $resident): ?>
 	<li>
-	<?= $resident->email; ?>
-	<a href="<?= $this->url(array('action' => 'edit', 'id' => $resident->id)); ?>">
-		&lt;bearbeiten&gt;
-	</a>
-	<a class="danger" href="<?= $this->url(array('action' => 'destroy', 'id' => $resident->id)); ?>">
-		&lt;rauswerfen&gt;
-	</a>
+	<span class="resident"><?= $resident->email; ?></span>
+	<span class="actions">
+      <a href="<?= $this->url(array('action' => 'edit', 'id' => $resident->id)); ?>">
+		<img src="<?= $this->basepath ?>/img/famfam/user_edit.png" alt="Bearbeiten" title="Bewohner bearbeiten" /></a>
+	  
+      <a class="danger" href="<?= $this->url(array('action' => 'destroy', 'id' => $resident->id)); ?>">
+		<img src="<?= $this->basepath ?>/img/famfam/user_delete.png" alt="L&ouml;schen" title="Bewohner l&ouml;schen" /></a>
+	</span>
+
 	</li>
 	<?endforeach; ?>
 </ul>
