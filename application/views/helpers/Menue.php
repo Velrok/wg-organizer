@@ -31,7 +31,7 @@ class Zend_View_Helper_Menue extends Zend_View_Helper_Abstract {
 				'controller' => $menueItem['controller'],
 				'action' => $menueItem['action'],
 			);
-			$html .= '<li><a href="'.$this->view->url($menueItem, $menue['label']).'">';
+			$html .= '<li><a href="'.$this->view->url($urlOptions).'">';
 			$html .= $menueItem['label'].'</a></li>'."\n";
 		}
 		$html .= "</ul>";

@@ -113,17 +113,6 @@ class ApplicationController extends Zend_Controller_Action
 	}
 	
 	/**
-	 * redirects to the given controller and action
-	 * 
-	 * @return void
-	 */
-	protected function redirect($controller, $action, array $options = array())
-	{
-		$url .= "/$controller/$action";
-		return $this->_redirect($url, $options);
-	}
-	
-	/**
 	 * adds $message to the FlashMessage helper
 	 * 
 	 * @param string $message

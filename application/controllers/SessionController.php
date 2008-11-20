@@ -36,7 +36,7 @@ class SessionController extends ApplicationController
 			if ($resident instanceof Resident){
 				$s = new Zend_Session_Namespace();
 				$s->currentResidentId = $resident->id;
-				$this->redirect('index', 'index');
+				$this->_redirect('/');
 			} else {
 				$this->flash("Email oder Password falsch!");
 				$this->_forward('new');
