@@ -1,2 +1,4 @@
 application/config/app.ini
-
+.cache/
+.project
+.settings/
