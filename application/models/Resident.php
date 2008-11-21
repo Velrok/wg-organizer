@@ -20,7 +20,7 @@ class Resident extends BaseModel {
 		$id = parent::save();
 		$cashAccounts = Table_Cashaccounts::getInstance();
 		$select = $cashAccounts->select()
-			->where('resident_id = ?', $di);
+			->where('resident_id = ?', $id);
 		$rows = $cashAccounts->fetchAll($select);
 		
 		if ($rows->count() > 0){
@@ -33,6 +33,18 @@ class Resident extends BaseModel {
 		}
 		
 		return $id;
+	}
+	
+	/**
+	 * @return Cashaccount
+	 */
+	public function getCashAccount()
+	{
+		$select = Table_Cashaccounts::getInstance()
+			->select()
+			->where('resident_id = ?', $this->id);
+		$rows = Table_Cashaccounts::getInstance()->fetchAll($select);
+		return $rows->current();
 	}
 	
 }//endClass

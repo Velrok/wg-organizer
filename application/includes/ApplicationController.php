@@ -63,6 +63,13 @@ class ApplicationController extends Zend_Controller_Action
 		$menue[] = $link;
 		
 		$link = array(
+			'label' => 'Gemeinschaftskasse',
+			'controller' => 'moneypool',
+			'action' => 'index',
+		);
+		$menue[] = $link;
+		
+		$link = array(
 			'label' => 'Bewohner',
 			'controller' => 'residents',
 			'action' => 'index',

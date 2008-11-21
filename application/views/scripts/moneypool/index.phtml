@@ -1,0 +1,15 @@
+<h1>Gemeinschafskasse</h1>
+<h2>Kontenübersicht</h2>
+
+<table>
+  <tr>
+    <th>Bewohner</th>
+    <th>Kontostand</th>
+  </tr>
+  <?foreach($this->residents as $resident): ?>
+  <tr>
+    <td><?= $resident->email ?></td>
+    <td align="right"><?= $resident->getCashAccount()->balance ?></td>
+  </tr>
+  <?endforeach; ?>
+</table>
