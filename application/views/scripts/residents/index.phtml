@@ -1,17 +1,25 @@
 <h1>Bewohner Übersicht</h1>
 
-<ul>
-	<?foreach($this->residents as $resident): ?>
-	<li>
-	<span class="resident"><?= $resident->email; ?></span>
-	<span class="actions">
-      <a href="<?= $this->url(array('action' => 'edit', 'id' => $resident->id)); ?>">
-		<img src="img/famfam/user_edit.png" alt="Bearbeiten" title="Bewohner bearbeiten" /></a>
-	  
-      <a class="danger" href="<?= $this->url(array('action' => 'destroy', 'id' => $resident->id)); ?>">
-		<img src="img/famfam/user_delete.png" alt="L&ouml;schen" title="Bewohner l&ouml;schen" /></a>
-	</span>
+<table>
+  <tr align="left">
+    <th>Benutzer</th>
+    <th>Aktionen</th>
+  </tr>
 
-	</li>
-	<?endforeach; ?>
-</ul>
+<?foreach($this->residents as $resident): ?>
+  <tr>
+    <td align="left"><span class="resident"><?= $resident->email; ?></span></td>
+    <td align="right">
+    	<span class="actions">
+	      	<a href="<?= $this->url(array('action' => 'edit', 'id' => $resident->id)); ?>">
+			<img src="img/famfam/user_edit.png" alt="Bearbeiten" title="Bewohner bearbeiten" /></a>
+		  
+	      	<a class="danger" href="<?= $this->url(array('action' => 'destroy', 'id' => $resident->id)); ?>">
+			<img src="img/famfam/user_delete.png" alt="L&ouml;schen" title="Bewohner l&ouml;schen" /></a>
+		</span>	
+    </td>
+  </tr>
+
+<?endforeach; ?>
+
+</table>

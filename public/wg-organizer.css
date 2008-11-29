@@ -1,5 +1,6 @@
-
-
+.danger {
+	color: red;
+}
 
 #messages {
   border:1px grey solid;
@@ -10,4 +11,17 @@
 #messages ul {
   list-style-image:none;
   list-style-type:square;	
+}
+
+h1 {
+	margin-bottom: 0.5em;
+	font-variant:small-caps;
+}
+
+h2 {
+	margin-bottom: 1.3em;
+}
+
+#main_left{
+	margin-bottom: 2em;
 }
