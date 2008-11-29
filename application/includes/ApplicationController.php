@@ -21,6 +21,14 @@ class ApplicationController extends Zend_Controller_Action
 	public function __construct(Zend_Controller_Request_Abstract $request, Zend_Controller_Response_Abstract $response, array $invokeArgs = array())
 	{
 		parent::__construct($request,$response,$invokeArgs);
+		
+		// retting old post if this is a redirect
+		$session = new Zend_Session_Namespace('workarounds');
+		if($session->lastPost){
+			$_POST = $session->lastPost;
+		}
+		unset($session->lastPost);
+		
 		$this->view->basepath = Zend_Registry::get('configuration')->basepath;
 		$this->view->pageTitle = "WG Organizer";
 		
@@ -123,14 +131,25 @@ class ApplicationController extends Zend_Controller_Action
 	}
 	
 	/**
-	 * redirects to the given controller and action
+	 * API equals _forward.
+	 * Althow recovers old post data to next action.
+	 * 
+	 * @param string $action
+	 * @param string $controller
+	 * @param string $module
+	 * $param array $params
 	 * 
 	 * @return void
 	 */
-	protected function redirect($controller, $action, array $options = array())
+	protected function redirect($action, $controller=null, $module=null, array $params=array())
 	{
-		$url .= "/$controller/$action";
-		return $this->_redirect($url, $options);
+		// do some workaround to tranport last post to redirected action
+		$session = new Zend_Session_Namespace('workarounds');
+		$session->lastPost = $_POST;
+		
+		$redirector = $this->_helper->getHelper('Redirector');
+		$redirector->setGotoSimple($action, $controller, $module, $params);
+		$redirector->redirectAndExit();
 	}
 	
 	/**

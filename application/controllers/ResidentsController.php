@@ -83,17 +83,17 @@ class ResidentsController extends ApplicationController
 					$this->flash('Der Bewohner mit der Email Addresse '.$newResident->email.' wurde erfolgreich eingetragen.');
 					$this->flash('Ein generiertes Passwort wurde per Email zugeschickt.');
 
-					$this->_redirect('index');
+					$this->redirect('index');
 				} else {
 					$this->flash('Es trat ein Fehler beim speichern des neuen Bewohners auf.');
-					$this->_redirect('new');
+					$this->redirect('new');
 				}
 			} else {
 				$this->flash('Ein Bewohner mit der Emailaddresse '.$form->getValue('email').' existiert bereits.');
-				$this->_redirect('new');
+				$this->redirect('new');
 			}
 		} else {
-			$this->_forward('new');
+			$this->redirect('new');
 		}
 	}
 
@@ -116,7 +116,7 @@ class ResidentsController extends ApplicationController
 		} else {
 			$this->flash('Der Rausschmiß ist nicht geglückt.');
 		}
-		$this->_redirect('residents');
+		$this->redirect('index');
 	}
 
 

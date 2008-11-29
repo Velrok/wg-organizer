@@ -34,6 +34,9 @@ class BuyingsController extends ApplicationController
 	 */
 	public function newAction(){
 		$form = $this->getNewByingsForm();
+		
+		if ($_POST) $form->isValid($_POST);
+		
 		$this->view->form = $form;
 	}
 	
@@ -50,7 +53,16 @@ class BuyingsController extends ApplicationController
 	 *
 	 */
 	public function createAction(){
-		
+		$this->requirePost();
+		$form = $this->getNewByingsForm();
+		if($form->isValid($_POST)){
+			// do some inputting 
+			// list byings
+			$this->flash('Einkäufte eingetragen');
+			$this->redirect('index');
+		} else {
+			$this->redirect('new');
+		}
 	}
 	
 	/**
@@ -74,7 +86,7 @@ class BuyingsController extends ApplicationController
 	 */
 	private function getNewByingsForm(){
 		$form = new Zend_Form();
-		
+		$form->setAction("buyings/create");
 		
 		for($i = 0; $i < 10; $i++){
 			$buyingName = new Zend_Form_Element_Text(array('name' => "product$i"));

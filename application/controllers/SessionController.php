@@ -43,11 +43,11 @@ class SessionController extends ApplicationController
 				$this->redirect('index', 'index');
 			} else {
 				$this->flash("Email oder Password falsch!");
-				$this->_redirect('session/new');
+				$this->redirect('new');
 			}
 			
 		} else {
-			$this->_redirect('session/new');
+			$this->redirect('new');
 		}
 	}
 	
@@ -61,7 +61,7 @@ class SessionController extends ApplicationController
 		$s->currentResidentId = null;
 		$s->currentResident = null;
 		$s->backgroud = null;
-		$this->_redirect('/');
+		$this->redirect('index', 'index');
 	}
 	
 	/**
