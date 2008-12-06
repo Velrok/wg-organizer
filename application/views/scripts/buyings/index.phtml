@@ -3,17 +3,19 @@
 <h2>Die letzten <?= $this->amount ?> Einkäufe</h2>
 
 <div class="body">
-<table>
+<table class="buyingsList">
   <tr>
   	<th>Preis</th>
     <th>Beschreibung</th>
     <th>Datum</th>
+    <th>Bewohner</th>
   </tr>
-  <? foreach($this->resentBuyings as $buying): ?>
-  <tr>
-    <td><?= sprintf("%.2f", ($buying->price / 100)); ?>€</td>
+  <? $even = true; foreach($this->resentBuyings as $buying): ?>
+  <tr class="<? if ($even) echo "even"; else echo "odd"; $even = !$even ?>">
+    <td><?= sprintf("%.2f", ($buying->price / 100)); ?> €</td>
     <td><?= $buying->description; ?></td>
     <td><? $date = new Zend_Date($buying->bought_at); echo $date->toString('EEEE dd.MM.YY HH:mm');?> Uhr</td>
+    <td><?= $buying->getResident()->getName(); ?></td>
   </tr>
   <? endforeach; ?>
 </table>

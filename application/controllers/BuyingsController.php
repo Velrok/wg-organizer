@@ -57,6 +57,22 @@ class BuyingsController extends ApplicationController
 		$form = $this->getNewByingsForm();
 		if($form->isValid($_POST)){
 			// do some inputting 
+			
+			for($i = 0; $i < 10; $i++){
+				if ($form->getValue("product$i")){
+					$product = $form->getValue("product$i");
+					$price = $form->getValue("price$i");
+					
+					$buyings = new Table_Buyings();
+					$buying = $buyings->createRow();
+					
+					$buying->setDescription($product);
+					$buying->setPriceInEuro($price);
+					$buying->setResident($this->getCurrentResident());
+					
+					$buying->save();
+				}
+			}
 			// list byings
 			$this->flash('Einkäufte eingetragen');
 			$this->redirect('index');

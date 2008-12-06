@@ -36,6 +36,21 @@ class Resident extends BaseModel {
 	}
 	
 	/**
+	 * @return string
+	 */
+	public function getEmail(){
+		return $this->email;
+	}
+	
+	public function getName(){
+		if($this->name != null && $this->name != ''){
+			return $this->name;
+		} else {
+			return $this->email;
+		}
+	}
+	
+	/**
 	 * @return Cashaccount
 	 */
 	public function getCashAccount()
