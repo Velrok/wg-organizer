@@ -1,17 +1,17 @@
 <?php
 /**
- * @author 
- * @date 
- * @year 
- * 
- * Decription ...  
+ * @author
+ * @date
+ * @year
+ *
+ * Decription ...
  */
 
 class Resident extends BaseModel {
-	
+
 	protected $_tableClass = 'Table_Residents';
-	
-	
+
+
 	/**
 	 * @return mixed
 	 */
@@ -20,9 +20,9 @@ class Resident extends BaseModel {
 		$id = parent::save();
 		$cashAccounts = Table_Cashaccounts::getInstance();
 		$select = $cashAccounts->select()
-			->where('resident_id = ?', $id);
+		->where('resident_id = ?', $id);
 		$rows = $cashAccounts->fetchAll($select);
-		
+
 		if ($rows->count() > 0){
 			// found needs update
 			$rows->current()->save();
@@ -31,17 +31,17 @@ class Resident extends BaseModel {
 			// means new resitend -> create an cash account
 			$cashAccounts->createRow(array('resident_id' => $id))->save();
 		}
-		
+
 		return $id;
 	}
-	
+
 	/**
 	 * @return string
 	 */
 	public function getEmail(){
 		return $this->email;
 	}
-	
+
 	public function getName(){
 		if($this->name != null && $this->name != ''){
 			return $this->name;
@@ -49,17 +49,23 @@ class Resident extends BaseModel {
 			return $this->email;
 		}
 	}
-	
+
 	/**
 	 * @return Cashaccount
 	 */
 	public function getCashAccount()
 	{
 		$select = Table_Cashaccounts::getInstance()
-			->select()
-			->where('resident_id = ?', $this->id);
+		->select()
+		->where('resident_id = ?', $this->id);
 		$rows = Table_Cashaccounts::getInstance()->fetchAll($select);
 		return $rows->current();
 	}
-	
+
+	public function delete(){
+		if ($this->getCashAccount()->delete() > 0){
+			$this->delete();
+		}
+	}
+
 }//endClass

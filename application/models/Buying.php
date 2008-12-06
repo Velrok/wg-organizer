@@ -32,8 +32,12 @@ class Buying extends BaseModel {
 	 * @return Resident
 	 */
 	public function getResident(){
-		$residents = new Table_Residents();
-		return $residents->fetchRow(array('id = ?' => $this->resident_id));
+		$resident = Table_Residents::getInstance()->fetchRow(array('id = ?' => $this->resident_id));
+		if ($resident){
+			return $resident;
+		} else {
+			return new UnknownResident();
+		}
 	}
 	
 	/**
@@ -42,5 +46,12 @@ class Buying extends BaseModel {
 	public function setResident($resident){
 		$this->resident_id = $resident->id;
 	}
+	
+	protected function _doInsert(){
+		$result = parent::_doInsert();
+		$pricePerResident = ($this->price / Table_Residents::getInstance()->count());
+		return $result;
+	}
+	
 	
 }//endClass

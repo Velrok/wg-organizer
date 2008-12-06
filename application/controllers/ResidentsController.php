@@ -110,8 +110,8 @@ class ResidentsController extends ApplicationController
 	 *
 	 */
 	public function destroyAction(){
-		$residentId = $this->getRequest()->getParam('id');
-		if (Table_Residents::getInstance()->delete("id = $residentId") == 1){
+		$resident = Table_Residents::getInstance()->findOne($this->getRequest()->getParam('id'));
+		if ($resident->delete() > 0){
 			$this->flash('Bewohner wurde rausgeworfen!');
 		} else {
 			$this->flash('Der Rausschmiß ist nicht geglückt.');
