@@ -47,9 +47,25 @@ class Buying extends BaseModel {
 		$this->resident_id = $resident->id;
 	}
 	
+	/**
+     * @return mixed The primary key value(s), as an associative array if the
+     *     key is compound, or a scalar if the key is single-column.
+     */
 	protected function _doInsert(){
 		$result = parent::_doInsert();
 		$pricePerResident = ($this->price / Table_Residents::getInstance()->count());
+		
+		// you get youre money back
+		$youreCashAccount = $this->getResident()->getCashAccount();
+		$youreCashAccount->addCents($this->price);
+		$youreCashAccount->save();
+		
+		// all have to pay the same ammount (including yourself)
+		foreach (Table_Cashaccounts::getInstance()->fetchAll() as $cashaccount){
+			$cashaccount->subCents($pricePerResident);
+			$cashaccount->save();
+		}
+		
 		return $result;
 	}
 	

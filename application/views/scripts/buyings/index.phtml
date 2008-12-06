@@ -10,11 +10,11 @@
     <th>Datum</th>
     <th>Bewohner</th>
   </tr>
-  <? $even = true; foreach($this->resentBuyings as $buying): ?>
-  <tr class="<? if ($even) echo "even"; else echo "odd"; $even = !$even ?>">
+  <?foreach($this->resentBuyings as $buying): ?>
+  <tr class="<?= $this->cycle(array('even','odd')) ?>">
     <td><?= sprintf("%.2f", ($buying->price / 100)); ?> €</td>
     <td><?= $buying->description; ?></td>
-    <td><? $date = new Zend_Date($buying->bought_at); echo $date->toString('EEEE dd.MM.YY HH:mm');?> Uhr</td>
+    <td><? $date = new Zend_Date($buying->bought_at); echo $date->toString('EEEE dd.MM.YY')."<br>".$date->toString('HH:mm');?> Uhr</td>
     <td><?= $buying->getResident()->getName(); ?></td>
   </tr>
   <? endforeach; ?>
