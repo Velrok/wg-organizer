@@ -1,0 +1,1 @@
+ALTER TABLE `Residents` ADD `name` VARCHAR( 255 ) NULL AFTER `id` ;
