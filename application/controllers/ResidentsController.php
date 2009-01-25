@@ -110,11 +110,15 @@ class ResidentsController extends ApplicationController
 	 *
 	 */
 	public function destroyAction(){
-		$resident = Table_Residents::getInstance()->findOne($this->getRequest()->getParam('id'));
-		if ($resident->delete() > 0){
+		$resident = Table_Residents::getInstance()->findById($this->getRequest()->getParam('id'));
+
+		try {
+			$resident->delete();
 			$this->flash('Bewohner wurde rausgeworfen!');
-		} else {
+		}
+		catch (Exception_BuisnessLogic $e){
 			$this->flash('Der Rausschmiß ist nicht geglückt.');
+			$this->flash($e->getMessage());
 		}
 		$this->redirect('index');
 	}

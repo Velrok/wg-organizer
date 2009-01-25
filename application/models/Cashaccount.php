@@ -39,4 +39,15 @@ class Cashaccount extends BaseModel {
 		return $this->balance;
 	}
 	
+	public function setBalanceInCent($newBalance){
+		$this->balance = $newBalance;
+	}
+	
+	/**
+	 * @return Resident
+	 */
+	public function getResident(){
+		return Table_Residents::getInstance()->findById($this->resident_id);
+	}
+	
 }//endClass
