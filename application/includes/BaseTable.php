@@ -29,6 +29,11 @@ class BaseTable extends Zend_Db_Table_Abstract  {
 		return $this->fetchAll()->count();
 	}
 	
+	
+	public function findById($id){
+		return $this->fetchRow(array("id = ?" => $id));
+	}
+	
 	/**
      * Fetches one row in an object of type Zend_Db_Table_Row_Abstract,
      * or returns Boolean false if no row matches the specified criteria.
@@ -38,7 +43,7 @@ class BaseTable extends Zend_Db_Table_Abstract  {
      * @return Zend_Db_Table_Row_Abstract The row results per the
      *     Zend_Db_Adapter fetch mode, or null if no row found.
      */
-	public function findOne($where, $order){
+	public function findOne($where, $order=null){
 		return $this->fetchRow($where, $order);
 	}
 }
