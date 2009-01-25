@@ -16,17 +16,19 @@ class AuthentificationPlugin extends Zend_Controller_Plugin_Abstract {
 	{
 		// dont filter anything if a resident is logged in
 		$session = new Zend_Session_Namespace();
+		
 		if($session->currentResidentId){
 			$session->currentResident = Table_Residents::getInstance()->find($session->currentResidentId)->current();
 			return;
 		}
 		
+		
 		// allow index and session controller to all
 		if ($request->getControllerName() == 'index' ||
 		$request->getControllerName() == 'session'){
 			return;
-		} 
-
+		}
+		
 		// else redirect to frontpage
 		$request->setControllerName('index');
 		$request->setActionName('index');
