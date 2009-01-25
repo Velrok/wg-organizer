@@ -18,9 +18,10 @@ class BuyingsController extends ApplicationController
 		$amount = (int)$this->getRequest()->getParam('amount');
 		if ($amount < 1){
 			$amount = 10;
-		} else {
-			$this->view->amount = $amount;
-		}
+		} 
+		
+		$this->view->amount = $amount;
+		
 		
 		switch ($this->requestedFormat()){
 			case Format::ATOM:
@@ -29,7 +30,7 @@ class BuyingsController extends ApplicationController
 				break;
 			
 			default: // html
-				$this->view->resentBuyings = Table_Buyings::getInstance()->findResent($amount);
+				$this->view->recentBuyings = Table_Buyings::getInstance()->findResent($amount);
 		}
 	}
 
@@ -76,7 +77,7 @@ class BuyingsController extends ApplicationController
 					$product = $form->getValue("product$i");
 					$price = $form->getValue("price$i");
 						
-					$buyings = new Table_Buyings();
+					$buyings = Table_Buyings::getInstance();
 					$buying = $buyings->createRow();
 						
 					$buying->setDescription($product);
