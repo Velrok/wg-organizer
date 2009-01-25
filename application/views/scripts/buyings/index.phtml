@@ -12,7 +12,7 @@
   </tr>
   <?foreach($this->recentBuyings as $buying): ?>
   <tr class="<?= $this->cycle(array('even','odd')) ?>">
-    <td class="number"><?= $this->moneyFormat($buying->price); ?></td>
+    <td class="number"><?= $this->moneyFormat($buying->getPrice()); ?></td>
     <td><?= $buying->description; ?></td>
     <td><?= $this->dateFormat($buying->bought_at); ?> Uhr</td>
     <td><?= $buying->getResident()->getName(); ?></td>

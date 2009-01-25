@@ -17,10 +17,17 @@ class AuthentificationPlugin extends Zend_Controller_Plugin_Abstract {
 		// dont filter anything if a resident is logged in
 		$session = new Zend_Session_Namespace();
 		
+		// Sets the resident id so the next if loads the user ;)
+		if ( $request->getParam('appauth_key') ) {
+			$session->currentResidentId = Table_Residents::getInstance()->findByAppAuthKey($request->getParam('appauth_key'));	
+		}
+		
 		if($session->currentResidentId){
 			$session->currentResident = Table_Residents::getInstance()->find($session->currentResidentId)->current();
 			return;
 		}
+		
+
 		
 		
 		// allow index and session controller to all

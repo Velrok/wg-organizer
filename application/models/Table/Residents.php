@@ -46,6 +46,12 @@ class Table_Residents extends BaseTable {
 		}
 	}
 	
+	public function findByAppAuthKey($key) {
+		$select = $this->select()->where('appauth_key = ?', $key);
+		return $this->fetchRow($select);
+		
+	}
+	
 	/**
 	 * @param string email
 	 * @return boolean
