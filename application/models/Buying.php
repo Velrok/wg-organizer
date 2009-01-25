@@ -57,12 +57,12 @@ class Buying extends BaseModel {
 		
 		// you get youre money back
 		$youreCashAccount = $this->getResident()->getCashAccount();
-		$youreCashAccount->addCents($this->price);
+		$youreCashAccount->addEuro($this->price);
 		$youreCashAccount->save();
 		
 		// all have to pay the same ammount (including yourself)
 		foreach (Table_Cashaccounts::getInstance()->fetchAll() as $cashaccount){
-			$cashaccount->subCents($pricePerResident);
+			$cashaccount->subEuro($pricePerResident);
 			$cashaccount->save();
 		}
 		

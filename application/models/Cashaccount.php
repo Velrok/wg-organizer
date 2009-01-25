@@ -16,11 +16,19 @@ class Cashaccount extends BaseModel {
 		$this->balance += $cents;
 	}
 	
+	public function addEuro($euro) {
+		$this->addCents($euro * 100);
+	}
+	
 	/**
 	 * @param int $cents
 	 */
 	public function subCents($cents){
 		$this->balance -= $cents;
+	}
+	
+	public function subEuro($euro) {
+		$this->subCents($euro * 100);	
 	}
 	
 	public function getBalanceInEuro(){

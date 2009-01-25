@@ -31,7 +31,7 @@ class Table_Buyings extends BaseTable {
 	 * @param int $amount
 	 * @return Zend_Db_Table_Rowset
 	 */
-	public function findResent($amount = 10)
+	public function findRecent($amount = 10)
 	{
 		$select = $this->select()
 			->order('bought_at DESC')

@@ -30,7 +30,7 @@ class BuyingsController extends ApplicationController
 				break;
 			
 			default: // html
-				$this->view->recentBuyings = Table_Buyings::getInstance()->findResent($amount);
+				$this->view->recentBuyings = Table_Buyings::getInstance()->findRecent($amount);
 		}
 	}
 

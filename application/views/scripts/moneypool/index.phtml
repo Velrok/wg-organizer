@@ -9,7 +9,7 @@
   <?foreach($this->residents as $resident): ?>
   <tr class="<?= $this->cycle(array('even','odd')) ?>">
     <td><?= $resident->getName() ?></td>
-    <td align="right"><?= $resident->getCashAccount()->getBalanceInEuro() ?> €</td>
+    <td align="right"><?= $this->moneyFormat($resident->getCashAccount()->getBalanceInEuro()); ?></td>
   </tr>
   <?endforeach; ?>
 </table>
