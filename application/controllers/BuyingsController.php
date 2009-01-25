@@ -24,7 +24,8 @@ class BuyingsController extends ApplicationController
 		
 		switch ($this->requestedFormat()){
 			case Format::ATOM:
-				
+				echo $this->view->render('./buyings/index.xml.phtml');
+				exit;
 				break;
 			
 			default: // html
