@@ -24,7 +24,9 @@
 
 		<div class="left">
 			<h1 id="site_title"><?= $this->pageTitle ?></h1>
-			<div id="site_description">Angemeldet als <?= $this->currentResident->getName(); ?></div>
+			<?php if ($this->currentResident): ?>
+				<div id="site_description">Angemeldet als <?= $this->currentResident->getName(); ?></div>
+			<?php endif; ?>
 		</div>
 
 		<!-- <a href="#" class="button feed right"><span></span></a>  -->
