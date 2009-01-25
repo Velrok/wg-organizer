@@ -12,8 +12,8 @@
  */
 class Zend_View_Helper_MoneyFormat extends Zend_View_Helper_Abstract {
 	
-	public function moneyFormat($price, $currency = "EUR") {
-    	$text = sprintf("%.2f", ($price / 100));
+	public function moneyFormat($priceInCent, $currency = "EUR") {
+    	$text = sprintf("%.2f", ($priceInCent / 100));
     	
     	if ( $currency == "EUR" ) {
     		$text .= " &euro;";	
