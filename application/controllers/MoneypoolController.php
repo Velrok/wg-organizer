@@ -85,7 +85,7 @@ class MoneypoolController extends ApplicationController
 			}
 
 			$mail->setBodyText($mailMessage);
-//			$mail->send();
+			$mail->send();
 				
 			foreach($cashaccounts as $cashaccount){
 				$cashaccount->setBalanceInCent(0);

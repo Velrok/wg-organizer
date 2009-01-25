@@ -63,13 +63,12 @@ class Resident extends BaseModel {
 	}
 
 	public function delete(){
-		
 		if ($this->getCashAccount()->getBalanceInCent() != 0) {
 			throw new Exception_BuisnessLogic("Das Konto von ".$this->getName()." ist nicht ausgeglichen.");
 		}
 		
 		if ($this->getCashAccount()->delete() > 0){
-			$this->delete();
+			parent::delete();
 		}
 	}
 
