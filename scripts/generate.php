@@ -2,7 +2,7 @@
 <?php
 
 if ($argv[0] != 'scripts/generate' &&
-$argv[0] != '/scripts/generate') {
+$argv[0] != './scripts/generate') {
 	print_ln("please start from project root");
 	exit -1;
 }
