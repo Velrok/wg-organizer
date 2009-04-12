@@ -28,8 +28,8 @@ class ApplicationController extends Zend_Controller_Action
 			$_POST = $session->lastPost;
 		}
 		unset($session->lastPost);
-
-		$this->view->basepath = Zend_Registry::get('configuration')->basepath;
+		
+		$this->view->basepath = $this->getBasePath();
 		$this->view->pageTitle = "WG Organizer";
 
 		$this->view->currentResident = $this->getCurrentResident();
@@ -38,8 +38,11 @@ class ApplicationController extends Zend_Controller_Action
 		$this->view->subMenue = $this->getSubMenue();
 
 		$this->view->flashMessenger = $this->_helper->getHelper('FlashMessenger');
-
-		//		Zend_Debug::dump($this->getCurrentResident());
+	}
+	
+	public function getBasePath()
+	{
+		return str_replace('index.php', '', $_SERVER['PHP_SELF']);
 	}
 
 	public function getMainMenue()

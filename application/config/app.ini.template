@@ -12,13 +12,10 @@ database.params.dbname = "WGOrganizer_new"
 database.params.host = "localhost"
 database.params.username = "dev"
 database.params.password = "dev"
-basepath = "/WGOrganizer/"
 
 [development : production]
 database.params.username = "PHP"
 database.params.password = "PHP"
-basepath = "http://localhost:8888/WGOrganizerNew/"
-
 
 [testing : production]
 
