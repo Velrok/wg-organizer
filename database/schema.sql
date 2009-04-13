@@ -47,9 +47,3 @@ CREATE TABLE `Residents` (
   `password_hash` varchar(200) NOT NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
-
--- 
--- Daten für Tabelle `Residents`
--- 
-
-INSERT INTO `Residents` VALUES (1, 'admin@wg.de', md5('change_on_install'));
