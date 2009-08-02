@@ -67,8 +67,9 @@ class BuyingsController extends ApplicationController
 		$this->requirePost();
 		$form = $this->getNewByingsForm();
 		if($form->isValid($_POST)){
-			
-			for ($i=0;;$i++) {
+			// do some inputting
+				
+			for($i = 0; $i < 10; $i++){
 				if ($form->getValue("product$i")){
 					$product = $form->getValue("product$i");
 					$price = $form->getValue("price$i");
@@ -114,7 +115,7 @@ class BuyingsController extends ApplicationController
 	 */
 	private function getNewByingsForm(){
 		$form = new Zend_Form();
-		$form->setAction("buyings/create");
+		$form->setAction($this->view->url(array('action' => 'create')));
 
 		for($i = 0; $i < 10; $i++){
 			$buyingName = new Zend_Form_Element_Text(array('name' => "product$i"));
