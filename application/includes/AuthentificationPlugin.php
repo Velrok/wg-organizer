@@ -27,7 +27,10 @@ class AuthentificationPlugin extends Zend_Controller_Plugin_Abstract {
       return;
     }
 
-    if ( $_POST['format'] !== "html" ) {
+    // Authenticate direct requests for non-html stuff
+    if ( $request->getParam('format') !== "html" ) {
+        
+      // The requestor provided a username
       if ( isset ($_SERVER['PHP_AUTH_USER'])) {
         $resident = Table_Residents::getInstance()->findResidentByEmailAndPasswordhash(
             $_SERVER['PHP_AUTH_USER'],
@@ -40,7 +43,8 @@ class AuthentificationPlugin extends Zend_Controller_Plugin_Abstract {
           return;
         }
       }
-
+      
+      
       header('WWW-Authenticate: Basic realm="WG-Organizer"');
       header('HTTP/1.0 401 Unauthorized');
       die();

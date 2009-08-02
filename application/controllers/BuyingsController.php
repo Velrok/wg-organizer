@@ -67,9 +67,8 @@ class BuyingsController extends ApplicationController
 		$this->requirePost();
 		$form = $this->getNewByingsForm();
 		if($form->isValid($_POST)){
-			// do some inputting
-				
-			for($i = 0; $i < 10; $i++){
+			
+			for ($i=0;;$i++) {
 				if ($form->getValue("product$i")){
 					$product = $form->getValue("product$i");
 					$price = $form->getValue("price$i");
@@ -82,6 +81,8 @@ class BuyingsController extends ApplicationController
 					$buying->setResident($this->getCurrentResident());
 						
 					$buying->save();
+				} else {
+				    break;    
 				}
 			}
 			// list byings
