@@ -1,0 +1,12 @@
+<h1>Nachrichten</h1>
+
+
+<? foreach($this->messages as $message): ?>
+<div class="message">
+  <span class="date"><?= $this->dateFormat($message->created_at) ?> Uhr</span>
+  <span class="from"><?= $message->from ?>:</span>
+  <h1><?= $message->title ?></h1>
+  <p><?= $message->message ?></p>
+</div>
+<div class="clear"></div>
+<? endforeach; ?>
