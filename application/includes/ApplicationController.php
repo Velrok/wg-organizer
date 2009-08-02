@@ -154,22 +154,12 @@ class ApplicationController extends Zend_Controller_Action {
   public function dispatch($action) {
     $dbAdapter = Zend_Registry::getInstance()->dbAdapter;
 
-    if($dbAdapter instanceof Zend_Db_Adapter_Abstract) {
-      $dbAdapter->beginTransaction();
-    } else {
-      $this->getLogger()->warn("no db addapter");
-    }
-
     try {
       parent::dispatch($action);
-      if($dbAddapter instanceof Zend_Db_Adapter_Abstract)
-        $dbAdapter->commit();
     }
 
     catch (Exception $e) {
-      $this->getLogger()->error($e->getMessage().$e->getTraceAsString());
-      if($dbAddapter instanceof Zend_Db_Adapter_Abstract)
-        $dbAdapter->rollBack();
+      $this->getLogger()->err($e->getMessage().$e->getTraceAsString());
     }
   }
 

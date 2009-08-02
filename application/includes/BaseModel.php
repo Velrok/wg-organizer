@@ -9,4 +9,11 @@
 
 class BaseModel extends Zend_Db_Table_Row {
 	
+  /**
+   *
+   * @return int id
+   */
+  public function getId(){
+    return (int)$this->id;
+  }
 }
