@@ -16,7 +16,9 @@ class IndexController extends ApplicationController
 	 *
 	 */
 	public function indexAction(){
-		
+    if($this->hasCurrentResident()){
+      $this->redirect('index', 'messages');
+    }
 	}
 	
 	public function testAction(){

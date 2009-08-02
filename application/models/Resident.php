@@ -72,4 +72,14 @@ class Resident extends BaseModel {
 		}
 	}
 
+  /**
+   *
+   * @param int $amount
+   * @return array<Message>
+   */
+  public function getLatestMessages($amount)
+  {
+    return Table_Messages::getInstance()->getLatestFor($this, $amount);
+  }
+
 }//endClass

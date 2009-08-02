@@ -21,7 +21,7 @@ class ApplicationController extends Zend_Controller_Action
 	public function __construct(Zend_Controller_Request_Abstract $request, Zend_Controller_Response_Abstract $response, array $invokeArgs = array())
 	{
 		parent::__construct($request,$response,$invokeArgs);
-
+    
 		// retting old post if this is a redirect
 		$session = new Zend_Session_Namespace('workarounds');
 		if($session->lastPost){
@@ -29,7 +29,7 @@ class ApplicationController extends Zend_Controller_Action
 		}
 		unset($session->lastPost);
 		
-		$this->view->basepath = $this->getBasePath();
+    $this->view->basepath = Zend_Controller_Front::getInstance()->getBaseUrl();
 		$this->view->pageTitle = "WG Organizer";
 
 		$this->view->currentResident = $this->getCurrentResident();
@@ -132,6 +132,18 @@ class ApplicationController extends Zend_Controller_Action
 		$s = new Zend_Session_Namespace();
 		return $s->currentResident;
 	}
+
+  /**
+   * @return bool
+   */
+  public function hasCurrentResident()
+  {
+    if($this->getCurrentResident() == null){
+      return false;
+    } else {
+      return true;
+    }
+  }
 
 	/**
 	 * API equals _forward.
