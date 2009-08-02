@@ -11,6 +11,12 @@ class Resident extends BaseModel {
 
 	protected $_tableClass = 'Table_Residents';
 
+	/**
+	 * @return string
+	 */
+	public function getAppAuthKey() {
+		return $this->appauth_key;	
+	}
 
 	/**
 	 * @return mixed

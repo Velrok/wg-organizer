@@ -10,10 +10,38 @@
 class Buying extends BaseModel {
 	
 	/**
+	 * @return string
+	 */
+	public function getDescription() {
+		return $this->description;	
+	}
+	
+	/**
+	 * @return integer
+	 */
+	public function getId() {
+		return $this->id;
+	}
+	
+	/**
+	 * @return string
+	 */
+	public function getBoughtAt() {
+		return $this->bought_at;	
+	}
+	
+	/**
 	 * @return float
 	 */
 	public function getPriceInEuro(){
 		return $this->price / 100.0;
+	}
+	
+	/**
+	 * @return float
+	 */
+	public function getPrice() {
+		return $this->price;	
 	}
 	
 	/**

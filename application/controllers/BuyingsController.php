@@ -21,16 +21,13 @@ class BuyingsController extends ApplicationController
 		} 
 		
 		$this->view->amount = $amount;
-		
+		$this->view->recentBuyings = Table_Buyings::getInstance()->findRecent($amount);		
 		
 		switch ($this->requestedFormat()){
 			case Format::ATOM:
 				echo $this->view->render('./buyings/index.xml.phtml');
 				exit;
 				break;
-			
-			default: // html
-				$this->view->recentBuyings = Table_Buyings::getInstance()->findRecent($amount);
 		}
 	}
 
