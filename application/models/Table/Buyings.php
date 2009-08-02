@@ -38,4 +38,17 @@ class Table_Buyings extends BaseTable {
 			->limit($amount);
 		return $this->fetchAll($select);
 	}
+
+  /**
+   *
+   * @return Zend_Paginator
+   */
+  public function getAllPageinaded(){
+    $select = $this->select()
+      ->order('bought_at DESC');
+
+    $paginator = Zend_Paginator::factory($select);
+    $paginator->setItemCountPerPage(1);
+    return $paginator;
+  }
 }//endClass

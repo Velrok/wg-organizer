@@ -1,23 +1,25 @@
 <div class="post">
-<h1>Einkäufe</h1>
-<h2>Die letzten <?= $this->amount ?> Einkäufe</h2>
+  <h1>Einkäufe</h1>
+  <h2>Die letzten <?= $this->amount ?> Einkäufe</h2>
 
-<div class="body">
-<table class="buyingsList">
-  <tr>
-  	<th>Preis</th>
-    <th>Beschreibung</th>
-    <th>Datum</th>
-    <th>Bewohner</th>
-  </tr>
-  <?foreach($this->recentBuyings as $buying): ?>
-  <tr class="<?= $this->cycle(array('even','odd')) ?>">
-    <td class="number"><?= $this->moneyFormat($buying->getPrice()); ?></td>
-    <td><?= $buying->description; ?></td>
-    <td><?= $this->dateFormat($buying->bought_at); ?> Uhr</td>
-    <td><?= $buying->getResident()->getName(); ?></td>
-  </tr>
-  <? endforeach; ?>
-</table>
-</div>
+  <div class="body">
+    <table class="buyingsList">
+      <tr>
+        <th>Preis</th>
+        <th>Beschreibung</th>
+        <th>Datum</th>
+        <th>Bewohner</th>
+      </tr>
+      <?foreach($this->recentBuyings as $buying): ?>
+      <tr class="<?= $this->cycle(array('even','odd')) ?>">
+        <td class="number"><?= $this->moneyFormat($buying->getPrice()); ?></td>
+        <td><?= $buying->description; ?></td>
+        <td><?= $this->dateFormat($buying->bought_at); ?> Uhr</td>
+        <td><?= $buying->getResident()->getName(); ?></td>
+      </tr>
+      <? endforeach; ?>
+    </table>
+
+    <?= $this->paginationControll($this->recentBuyings, 'Slyding') ?>
+  </div>
 </div>

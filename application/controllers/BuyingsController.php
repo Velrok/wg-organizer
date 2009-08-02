@@ -21,7 +21,9 @@ class BuyingsController extends ApplicationController
 		} 
 		
 		$this->view->amount = $amount;
-		$this->view->recentBuyings = Table_Buyings::getInstance()->findRecent($amount);		
+//		$this->view->recentBuyings = Table_Buyings::getInstance()->findRecent($amount);
+
+    $this->view->recentBuyings = Table_Buyings::getInstance()->getAllPageinaded();
 		
 		switch ($this->requestedFormat()){
 			case Format::ATOM:
@@ -83,7 +85,7 @@ class BuyingsController extends ApplicationController
 						
 					$buying->save();
 				} else {
-				    break;    
+				    break;
 				}
 			}
 			// list byings
