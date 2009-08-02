@@ -1,4 +1,4 @@
- CREATE TABLE `wg_organizer_development`.`Messages` (
+ CREATE TABLE IF NOT EXISTS `wg_organizer_development`.`Messages` (
   `id` INT( 11 ) NOT NULL ,
   `from` VARCHAR( 100 ) NOT NULL ,
   `resident_id` INT( 11 ) NOT NULL ,

@@ -1,0 +1,419 @@
+2009-08-02T17:50:58+02:00 DEBUG (7): Beginning Transaction
+2009-08-02T17:54:06+02:00 DEBUG (7): createdbAction
+2009-08-02T17:54:06+02:00 DEBUG (7): Beginning Transaction
+2009-08-02T17:54:06+02:00 DEBUG (7): Setting Default Addapter
+2009-08-02T17:54:06+02:00 DEBUG (7): executing schema.sql
+2009-08-02T17:54:06+02:00 DEBUG (7): executing 001_migation_added-cashaccount.sql sql= CREATE TABLE IF NOT EXISTS `Cashaccounts` (
+`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`resident_id` INT NOT NULL ,
+`balance` INT NOT NULL DEFAULT '0' COMMENT 'in cents',
+UNIQUE (
+`resident_id`
+)
+) ENGINE = MYISAM ;
+2009-08-02T17:54:06+02:00 DEBUG (7): executing 002_migration_added_name_colume_to_residents.sql sql= ALTER TABLE `Residents` ADD `name` VARCHAR( 255 ) NULL AFTER `id` ;
+2009-08-02T17:54:06+02:00 DEBUG (7): Exception: #0 /Users/velrok/workspaces/php/WGOrganizer/libraries/Zend/Db/Statement.php(283): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /Users/velrok/workspaces/php/WGOrganizer/libraries/Zend/Db/Adapter/Abstract.php(430): Zend_Db_Statement->execute(Array)
+#2 /Users/velrok/workspaces/php/WGOrganizer/libraries/Zend/Db/Adapter/Pdo/Abstract.php(220): Zend_Db_Adapter_Abstract->query('ALTER TABLE `Re...', Array)
+#3 /Users/velrok/workspaces/php/WGOrganizer/application/controllers/SetupController.php(82): Zend_Db_Adapter_Pdo_Abstract->query('ALTER TABLE `Re...')
+#4 /Users/velrok/workspaces/php/WGOrganizer/application/controllers/SetupController.php(38): SetupController->createdbAction()
+#5 /Users/velrok/workspaces/php/WGOrganizer/libraries/Zend/Controller/Action.php(503): SetupController->createconfigAction()
+#6 /Users/velrok/workspaces/php/WGOrganizer/libraries/Zend/Controller/Dispatcher/Standard.php(285): Zend_Controller_Action->dispatch('createconfigAct...')
+#7 /Users/velrok/workspaces/php/WGOrganizer/libraries/Zend/Controller/Front.php(934): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#8 /Users/velrok/workspaces/php/WGOrganizer/public/index.php(49): Zend_Controller_Front->dispatch()
+#9 {main}
+2009-08-02T17:54:06+02:00 DEBUG (7): db rollBack
+2009-08-02T18:05:07+02:00 WARN (4): no db addapter
+2009-08-02T18:05:07+02:00 DEBUG (7): createdbAction
+2009-08-02T18:05:07+02:00 DEBUG (7): Beginning Transaction
+2009-08-02T18:05:07+02:00 DEBUG (7): Setting Default Addapter
+2009-08-02T18:05:07+02:00 DEBUG (7): executing schema.sql
+2009-08-02T18:05:07+02:00 DEBUG (7): executing 001_migation_added-cashaccount.sql sql= CREATE TABLE IF NOT EXISTS `Cashaccounts` (
+`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`resident_id` INT NOT NULL ,
+`balance` INT NOT NULL DEFAULT '0' COMMENT 'in cents',
+UNIQUE (
+`resident_id`
+)
+) ENGINE = MYISAM ;
+2009-08-02T18:05:07+02:00 DEBUG (7): executing 002_migration_added_name_colume_to_residents.sql sql= ALTER TABLE `Residents` ADD `name` VARCHAR( 255 ) NULL AFTER `id` ;
+2009-08-02T18:05:07+02:00 WARN (4): no db addapter
+2009-08-02T18:06:50+02:00 WARN (4): no db addapter
+2009-08-02T18:06:50+02:00 DEBUG (7): createdbAction
+2009-08-02T18:06:50+02:00 DEBUG (7): Beginning Transaction
+2009-08-02T18:06:50+02:00 DEBUG (7): Setting Default Addapter
+2009-08-02T18:06:50+02:00 DEBUG (7): executing schema.sql
+2009-08-02T18:06:50+02:00 DEBUG (7): executing 001_migation_added-cashaccount.sql sql= CREATE TABLE IF NOT EXISTS `Cashaccounts` (
+`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`resident_id` INT NOT NULL ,
+`balance` INT NOT NULL DEFAULT '0' COMMENT 'in cents',
+UNIQUE (
+`resident_id`
+)
+) ENGINE = MYISAM ;
+2009-08-02T18:06:50+02:00 DEBUG (7): executing 002_migration_added_name_colume_to_residents.sql sql= ALTER TABLE `Residents` ADD `name` VARCHAR( 255 ) NULL AFTER `id` ;
+2009-08-02T18:06:50+02:00 DEBUG (7): Exception: SQLSTATE[42S21]: Column already exists: 1060 Duplicate column name 'name'
+2009-08-02T18:06:50+02:00 WARN (4): no db addapter
+2009-08-02T18:10:04+02:00 WARN (4): no db addapter
+2009-08-02T18:10:04+02:00 DEBUG (7): createdbAction
+2009-08-02T18:10:04+02:00 DEBUG (7): Beginning Transaction
+2009-08-02T18:10:04+02:00 DEBUG (7): Setting Default Addapter
+2009-08-02T18:10:04+02:00 DEBUG (7): executing schema.sql
+2009-08-02T18:10:04+02:00 DEBUG (7): executing schema.sql sql= -- phpMyAdmin SQL Dump
+-- version 2.10.2
+-- http://www.phpmyadmin.net
+-- 
+-- Host: localhost
+-- Erstellungszeit: 19. November 2008 um 02:53
+-- Server Version: 5.0.41
+-- PHP-Version: 5.2.5
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+-- 
+-- Datenbank: `WGOrganizer_new`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Tabellenstruktur für Tabelle `Buyings`
+-- 
+
+CREATE TABLE IF NOT EXISTS `Buyings` (
+  `id` int(10) NOT NULL auto_increment,
+  `description` varchar(100) NOT NULL,
+  `price` int(10) NOT NULL,
+  `resident_id` int(10) NOT NULL,
+  `bought_at` timestamp NOT NULL default CURRENT_TIMESTAMP,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+-- --------------------------------------------------------
+
+-- 
+-- Tabellenstruktur für Tabelle `Residents`
+-- 
+
+CREATE TABLE IF NOT EXISTS `Residents` (
+  `id` int(10) NOT NULL auto_increment,
+  `email` varchar(50) NOT NULL,
+  `password_hash` varchar(200) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+2009-08-02T18:10:04+02:00 DEBUG (7): Exception: SQLSTATE[42000]: Syntax error or access violation: 1065 Query was empty
+2009-08-02T18:10:04+02:00 WARN (4): no db addapter
+2009-08-02T18:11:32+02:00 WARN (4): no db addapter
+2009-08-02T18:11:32+02:00 DEBUG (7): createdbAction
+2009-08-02T18:11:32+02:00 DEBUG (7): Beginning Transaction
+2009-08-02T18:11:32+02:00 DEBUG (7): Setting Default Addapter
+2009-08-02T18:11:32+02:00 DEBUG (7): executing schema.sql
+2009-08-02T18:11:32+02:00 DEBUG (7): executing schema.sql sql= -- phpMyAdmin SQL Dump
+-- version 2.10.2
+-- http://www.phpmyadmin.net
+-- 
+-- Host: localhost
+-- Erstellungszeit: 19. November 2008 um 02:53
+-- Server Version: 5.0.41
+-- PHP-Version: 5.2.5
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+-- 
+-- Datenbank: `WGOrganizer_new`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Tabellenstruktur für Tabelle `Buyings`
+-- 
+
+CREATE TABLE IF NOT EXISTS `Buyings` (
+  `id` int(10) NOT NULL auto_increment,
+  `description` varchar(100) NOT NULL,
+  `price` int(10) NOT NULL,
+  `resident_id` int(10) NOT NULL,
+  `bought_at` timestamp NOT NULL default CURRENT_TIMESTAMP,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+-- --------------------------------------------------------
+
+-- 
+-- Tabellenstruktur für Tabelle `Residents`
+-- 
+
+CREATE TABLE IF NOT EXISTS `Residents` (
+  `id` int(10) NOT NULL auto_increment,
+  `email` varchar(50) NOT NULL,
+  `password_hash` varchar(200) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+2009-08-02T18:11:32+02:00 DEBUG (7): Exception: SQLSTATE[42000]: Syntax error or access violation: 1065 Query was empty
+2009-08-02T18:11:32+02:00 WARN (4): no db addapter
+2009-08-02T18:16:47+02:00 WARN (4): no db addapter
+2009-08-02T18:16:47+02:00 DEBUG (7): createdbAction
+2009-08-02T18:16:47+02:00 DEBUG (7): Beginning Transaction
+2009-08-02T18:16:47+02:00 DEBUG (7): Setting Default Addapter
+2009-08-02T18:16:47+02:00 DEBUG (7): executing schema.sql
+2009-08-02T18:16:47+02:00 DEBUG (7): executing schema.sql sql= -- phpMyAdmin SQL Dump
+-- version 2.10.2
+-- http://www.phpmyadmin.net
+-- 
+-- Host: localhost
+-- Erstellungszeit: 19. November 2008 um 02:53
+-- Server Version: 5.0.41
+-- PHP-Version: 5.2.5
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+-- 
+-- Datenbank: `WGOrganizer_new`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Tabellenstruktur für Tabelle `Buyings`
+-- 
+
+CREATE TABLE IF NOT EXISTS `Buyings` (
+  `id` int(10) NOT NULL auto_increment,
+  `description` varchar(100) NOT NULL,
+  `price` int(10) NOT NULL,
+  `resident_id` int(10) NOT NULL,
+  `bought_at` timestamp NOT NULL default CURRENT_TIMESTAMP,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+-- 
+-- Tabellenstruktur für Tabelle `Residents`
+-- 
+
+CREATE TABLE IF NOT EXISTS `Residents` (
+  `id` int(10) NOT NULL auto_increment,
+  `email` varchar(50) NOT NULL,
+  `password_hash` varchar(200) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+2009-08-02T18:16:47+02:00 DEBUG (7): Exception: SQLSTATE[42000]: Syntax error or access violation: 1065 Query was empty#0 /Users/velrok/workspaces/php/WGOrganizer/libraries/Zend/Db/Statement.php(283): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /Users/velrok/workspaces/php/WGOrganizer/libraries/Zend/Db/Adapter/Abstract.php(430): Zend_Db_Statement->execute(Array)
+#2 /Users/velrok/workspaces/php/WGOrganizer/libraries/Zend/Db/Adapter/Pdo/Abstract.php(220): Zend_Db_Adapter_Abstract->query(NULL, Array)
+#3 /Users/velrok/workspaces/php/WGOrganizer/application/controllers/SetupController.php(76): Zend_Db_Adapter_Pdo_Abstract->query()
+#4 /Users/velrok/workspaces/php/WGOrganizer/application/controllers/SetupController.php(38): SetupController->createdbAction()
+#5 /Users/velrok/workspaces/php/WGOrganizer/libraries/Zend/Controller/Action.php(503): SetupController->createconfigAction()
+#6 /Users/velrok/workspaces/php/WGOrganizer/application/includes/ApplicationController.php(164): Zend_Controller_Action->dispatch('createconfigAct...')
+#7 /Users/velrok/workspaces/php/WGOrganizer/libraries/Zend/Controller/Dispatcher/Standard.php(285): ApplicationController->dispatch('createconfigAct...')
+#8 /Users/velrok/workspaces/php/WGOrganizer/libraries/Zend/Controller/Front.php(934): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#9 /Users/velrok/workspaces/php/WGOrganizer/public/index.php(49): Zend_Controller_Front->dispatch()
+#10 {main}
+2009-08-02T18:16:47+02:00 WARN (4): no db addapter
+2009-08-02T18:18:09+02:00 WARN (4): no db addapter
+2009-08-02T18:18:09+02:00 DEBUG (7): createdbAction
+2009-08-02T18:18:09+02:00 DEBUG (7): Beginning Transaction
+2009-08-02T18:18:09+02:00 DEBUG (7): Setting Default Addapter
+2009-08-02T18:18:09+02:00 DEBUG (7): executing schema.sql
+2009-08-02T18:18:09+02:00 DEBUG (7): executing schema.sql sql= -- phpMyAdmin SQL Dump
+-- version 2.10.2
+-- http://www.phpmyadmin.net
+-- 
+-- Host: localhost
+-- Erstellungszeit: 19. November 2008 um 02:53
+-- Server Version: 5.0.41
+-- PHP-Version: 5.2.5
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+-- 
+-- Datenbank: `WGOrganizer_new`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Tabellenstruktur für Tabelle `Buyings`
+-- 
+
+CREATE TABLE IF NOT EXISTS `Buyings` (
+  `id` int(10) NOT NULL auto_increment,
+  `description` varchar(100) NOT NULL,
+  `price` int(10) NOT NULL,
+  `resident_id` int(10) NOT NULL,
+  `bought_at` timestamp NOT NULL default CURRENT_TIMESTAMP,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+-- 
+-- Tabellenstruktur für Tabelle `Residents`
+-- 
+
+CREATE TABLE IF NOT EXISTS `Residents` (
+  `id` int(10) NOT NULL auto_increment,
+  `email` varchar(50) NOT NULL,
+  `password_hash` varchar(200) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+2009-08-02T18:18:09+02:00 DEBUG (7): executing 001_migation_added-cashaccount.sql sql= CREATE TABLE IF NOT EXISTS `Cashaccounts` (
+`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`resident_id` INT NOT NULL ,
+`balance` INT NOT NULL DEFAULT '0' COMMENT 'in cents',
+UNIQUE (
+`resident_id`
+)
+) ENGINE = MYISAM ;
+2009-08-02T18:18:09+02:00 DEBUG (7): executing 002_migration_added_name_colume_to_residents.sql sql= ALTER TABLE `Residents` ADD `name` VARCHAR( 255 ) NULL AFTER `id` ;
+2009-08-02T18:18:09+02:00 DEBUG (7): Exception: SQLSTATE[42S21]: Column already exists: 1060 Duplicate column name 'name'#0 /Users/velrok/workspaces/php/WGOrganizer/libraries/Zend/Db/Statement.php(283): Zend_Db_Statement_Pdo->_execute(NULL)
+#1 /Users/velrok/workspaces/php/WGOrganizer/application/controllers/SetupController.php(84): Zend_Db_Statement->execute()
+#2 /Users/velrok/workspaces/php/WGOrganizer/application/controllers/SetupController.php(38): SetupController->createdbAction()
+#3 /Users/velrok/workspaces/php/WGOrganizer/libraries/Zend/Controller/Action.php(503): SetupController->createconfigAction()
+#4 /Users/velrok/workspaces/php/WGOrganizer/application/includes/ApplicationController.php(164): Zend_Controller_Action->dispatch('createconfigAct...')
+#5 /Users/velrok/workspaces/php/WGOrganizer/libraries/Zend/Controller/Dispatcher/Standard.php(285): ApplicationController->dispatch('createconfigAct...')
+#6 /Users/velrok/workspaces/php/WGOrganizer/libraries/Zend/Controller/Front.php(934): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#7 /Users/velrok/workspaces/php/WGOrganizer/public/index.php(49): Zend_Controller_Front->dispatch()
+#8 {main}
+2009-08-02T18:18:09+02:00 WARN (4): no db addapter
+2009-08-02T18:23:26+02:00 WARN (4): no db addapter
+2009-08-02T18:23:26+02:00 WARN (4): no db addapter
+2009-08-02T18:23:44+02:00 WARN (4): no db addapter
+2009-08-02T18:23:44+02:00 DEBUG (7): createdbAction
+2009-08-02T18:23:44+02:00 DEBUG (7): Beginning Transaction
+2009-08-02T18:23:44+02:00 DEBUG (7): Setting Default Addapter
+2009-08-02T18:23:44+02:00 DEBUG (7): executing schema.sql sql= -- phpMyAdmin SQL Dump
+-- version 2.10.2
+-- http://www.phpmyadmin.net
+-- 
+-- Host: localhost
+-- Erstellungszeit: 19. November 2008 um 02:53
+-- Server Version: 5.0.41
+-- PHP-Version: 5.2.5
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+-- 
+-- Datenbank: `WGOrganizer_new`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Tabellenstruktur für Tabelle `Buyings`
+-- 
+
+CREATE TABLE IF NOT EXISTS `Buyings` (
+  `id` int(10) NOT NULL auto_increment,
+  `description` varchar(100) NOT NULL,
+  `price` int(10) NOT NULL,
+  `resident_id` int(10) NOT NULL,
+  `bought_at` timestamp NOT NULL default CURRENT_TIMESTAMP,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+-- 
+-- Tabellenstruktur für Tabelle `Residents`
+-- 
+
+CREATE TABLE IF NOT EXISTS `Residents` (
+  `id` int(10) NOT NULL auto_increment,
+  `email` varchar(50) NOT NULL,
+  `password_hash` varchar(200) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+2009-08-02T18:23:44+02:00 DEBUG (7): executing 001_migation_added-cashaccount.sql sql: CREATE TABLE IF NOT EXISTS `Cashaccounts` (
+`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`resident_id` INT NOT NULL ,
+`balance` INT NOT NULL DEFAULT '0' COMMENT 'in cents',
+UNIQUE (
+`resident_id`
+)
+) ENGINE = MYISAM ;
+2009-08-02T18:23:44+02:00 DEBUG (7): executing 002_migration_added_name_colume_to_residents.sql sql: ALTER TABLE `Residents` ADD `name` VARCHAR( 255 ) NULL AFTER `id` ;
+2009-08-02T18:23:44+02:00 DEBUG (7): Exception: SQLSTATE[42S21]: Column already exists: 1060 Duplicate column name 'name'#0 /Users/velrok/workspaces/php/WGOrganizer/libraries/Zend/Db/Statement.php(283): Zend_Db_Statement_Pdo->_execute(NULL)
+#1 /Users/velrok/workspaces/php/WGOrganizer/application/controllers/SetupController.php(83): Zend_Db_Statement->execute()
+#2 /Users/velrok/workspaces/php/WGOrganizer/application/controllers/SetupController.php(38): SetupController->createdbAction()
+#3 /Users/velrok/workspaces/php/WGOrganizer/libraries/Zend/Controller/Action.php(503): SetupController->createconfigAction()
+#4 /Users/velrok/workspaces/php/WGOrganizer/application/includes/ApplicationController.php(164): Zend_Controller_Action->dispatch('createconfigAct...')
+#5 /Users/velrok/workspaces/php/WGOrganizer/libraries/Zend/Controller/Dispatcher/Standard.php(285): ApplicationController->dispatch('createconfigAct...')
+#6 /Users/velrok/workspaces/php/WGOrganizer/libraries/Zend/Controller/Front.php(934): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#7 /Users/velrok/workspaces/php/WGOrganizer/public/index.php(49): Zend_Controller_Front->dispatch()
+#8 {main}
+2009-08-02T18:23:44+02:00 WARN (4): no db addapter
+2009-08-02T18:27:00+02:00 WARN (4): no db addapter
+2009-08-02T18:27:00+02:00 DEBUG (7): createdbAction
+2009-08-02T18:27:00+02:00 DEBUG (7): Beginning Transaction
+2009-08-02T18:27:00+02:00 DEBUG (7): Setting Default Addapter
+2009-08-02T18:27:00+02:00 DEBUG (7): executing schema.sql sql= -- phpMyAdmin SQL Dump
+-- version 2.10.2
+-- http://www.phpmyadmin.net
+-- 
+-- Host: localhost
+-- Erstellungszeit: 19. November 2008 um 02:53
+-- Server Version: 5.0.41
+-- PHP-Version: 5.2.5
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+-- 
+-- Datenbank: `WGOrganizer_new`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Tabellenstruktur für Tabelle `Buyings`
+-- 
+
+CREATE TABLE IF NOT EXISTS `Buyings` (
+  `id` int(10) NOT NULL auto_increment,
+  `description` varchar(100) NOT NULL,
+  `price` int(10) NOT NULL,
+  `resident_id` int(10) NOT NULL,
+  `bought_at` timestamp NOT NULL default CURRENT_TIMESTAMP,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+-- 
+-- Tabellenstruktur für Tabelle `Residents`
+-- 
+
+CREATE TABLE IF NOT EXISTS `Residents` (
+  `id` int(10) NOT NULL auto_increment,
+  `email` varchar(50) NOT NULL,
+  `password_hash` varchar(200) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+2009-08-02T18:27:00+02:00 DEBUG (7): executing 001_migation_added-cashaccount.sql sql: CREATE TABLE IF NOT EXISTS `Cashaccounts` (
+`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`resident_id` INT NOT NULL ,
+`balance` INT NOT NULL DEFAULT '0' COMMENT 'in cents',
+UNIQUE (
+`resident_id`
+)
+) ENGINE = MYISAM ;
+2009-08-02T18:27:00+02:00 DEBUG (7): executing 002_migration_added_name_colume_to_residents.sql sql: ALTER TABLE `Residents` ADD `name` VARCHAR( 255 ) NULL AFTER `id` ;
+2009-08-02T18:27:00+02:00 DEBUG (7): executing 003_migration_messages_table.sql sql:  CREATE TABLE IF NOT EXISTS `wg_organizer_development`.`Messages` (
+  `id` INT( 11 ) NOT NULL ,
+  `from` VARCHAR( 100 ) NOT NULL ,
+  `resident_id` INT( 11 ) NOT NULL ,
+  `message` VARCHAR( 500 ) NOT NULL ,
+  `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+  `title` VARCHAR( 80 ) NOT NULL ,
+  PRIMARY KEY ( `id` )
+) ENGINE = MYISAM;
+
+ ALTER TABLE `Messages` CHANGE `id` `id` INT( 11 ) NOT NULL AUTO_INCREMENT;
+2009-08-02T18:27:00+02:00 DEBUG (7): db commit
