@@ -53,7 +53,6 @@ class SetupController extends ApplicationController {
         APPLICATION_ENVIRONMENT);
 
     $dbAdapter = Zend_Db::factory($configuration->database);
-    $this->debug('Beginning Transaction');
     $dbAdapter->beginTransaction();
 
     try {
@@ -74,7 +73,6 @@ class SetupController extends ApplicationController {
       $this->debug("executing schema.sql sql= ". $sql);
       $dbAdapter->query($sql);
 
-
       foreach ($database_dir as $file) {
         if($file->isFile() &&
             preg_match("/\d\d\d.*/", $file->getFilename())) { // starts with a number
@@ -92,8 +90,6 @@ class SetupController extends ApplicationController {
 
       $new_resident = Table_Residents::getInstance()->createRow($data);
       $new_resident->save();
-      $this->debug('db commit');
-      $dbAdapter->commit();
     }
 
     catch (Exception $e ) {
