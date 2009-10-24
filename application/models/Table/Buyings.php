@@ -41,6 +41,17 @@ class Table_Buyings extends BaseTable {
 
   /**
    *
+   * @return Zend_Db_Table_Rowset
+   */
+  public function getAll(){
+    $select = $this->select()
+      ->order('bought_at DESC');
+
+    return $this->fetchAll($select);
+  }
+
+  /**
+   *
    * @return Zend_Paginator
    */
   public function getAllPageinaded(){

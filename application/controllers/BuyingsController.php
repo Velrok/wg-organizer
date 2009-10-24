@@ -15,22 +15,7 @@ class BuyingsController extends ApplicationController
 	 *
 	 */
 	public function indexAction(){
-		$amount = (int)$this->getRequest()->getParam('amount');
-		if ($amount < 1){
-			$amount = 10;
-		} 
-		
-		$this->view->amount = $amount;
-//		$this->view->recentBuyings = Table_Buyings::getInstance()->findRecent($amount);
-
-    $this->view->recentBuyings = Table_Buyings::getInstance()->getAllPageinaded();
-		
-		switch ($this->requestedFormat()){
-			case Format::ATOM:
-				echo $this->view->render('./buyings/index.xml.phtml');
-				exit;
-				break;
-		}
+    $this->view->recentBuyings = Table_Buyings::getInstance()->getAll();
 	}
 
 	/**

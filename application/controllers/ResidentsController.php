@@ -130,7 +130,7 @@ class ResidentsController extends ApplicationController
 	private function getNewResidentForm()
 	{
 		$form = new Zend_Form();
-		$form->setAction("residents/create")
+		$form->setAction($this->view->url(array('action' => 'create')))
         	->setMethod('post');
 			
 		$email = new Zend_Form_Element_Text(array(

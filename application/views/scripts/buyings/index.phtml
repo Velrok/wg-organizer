@@ -1,6 +1,5 @@
 <div class="post">
   <h1>Einkäufe</h1>
-  <h2>Die letzten <?= $this->amount ?> Einkäufe</h2>
 
   <div class="body">
     <table class="buyingsList">
@@ -10,7 +9,8 @@
         <th>Datum</th>
         <th>Bewohner</th>
       </tr>
-      <?foreach($this->recentBuyings as $buying): ?>
+      <?php  ?>
+      <?php foreach( $this->recentBuyings as $buying): ?>
       <tr class="<?= $this->cycle(array('even','odd')) ?>">
         <td class="number"><?= $this->moneyFormat($buying->getPrice()); ?></td>
         <td><?= $buying->description; ?></td>
@@ -19,7 +19,5 @@
       </tr>
       <? endforeach; ?>
     </table>
-
-    <?= $this->paginationControll($this->recentBuyings, 'Slyding') ?>
   </div>
 </div>

@@ -10,4 +10,5 @@
 class Format {
 	const RSS = 'rss';
 	const ATOM = 'atom';
+  const HTML = 'html';
 }

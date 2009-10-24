@@ -93,9 +93,31 @@ class Buying extends BaseModel {
 			$cashaccount->subCents($pricePerResident);
 			$cashaccount->save();
 		}
-		
+
+//    $this->_createMessage($result);
+
 		return $result;
 	}
-	
+
+  /**
+   * Creates an Message to all residents.
+   *
+   * @param int $buyingId
+   */
+  protected function _createMessage($buyingId){
+    $buying = Table_Buyings::getInstance()->findById($buyingId);
+
+    // create a message for each resident
+    $residents = Table_Residents::getInstance()->fetchAll();
+    foreach($residents as $resident){
+      $date = array();
+
+      $data['residend_id'] = $resident->getId();
+      $data['title'] = 'Neuer Einkauf';
+      $data['message'] = 'Neuer Einkauf';
+
+      Table_Messages::getInstance()->createRow($data);
+    }
+  }
 	
 }//endClass
