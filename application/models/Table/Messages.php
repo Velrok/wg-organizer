@@ -19,7 +19,7 @@ class Table_Messages extends BaseTable {
   /**
    * @return Table_Messages
    */
-  public function getInstance()
+  public static function getInstance()
   {
     if(!self::$uniqueInstance){
       self::$uniqueInstance = new Table_Messages();

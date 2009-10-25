@@ -20,7 +20,7 @@ class Table_Residents extends BaseTable {
 	/**
 	 * @return Table_Residents
 	 */
-	public function getInstance()
+	public static function getInstance()
 	{
 		if(!self::$uniqueInstance){
 			self::$uniqueInstance = new Table_Residents();

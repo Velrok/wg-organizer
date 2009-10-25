@@ -6,7 +6,7 @@
   <span class="date"><?= $this->dateFormat($message->created_at) ?> Uhr</span>
   <span class="from"><?= $message->from ?>:</span>
   <h1><?= $message->title ?></h1>
-  <p><?= $message->message ?></p>
+  <p><?= str_replace("\n", "<br>\n", $message->message) ?></p>
 </div>
 <div class="clear"></div>
 <? endforeach; ?>

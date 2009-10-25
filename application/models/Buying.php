@@ -94,8 +94,6 @@ class Buying extends BaseModel {
 			$cashaccount->save();
 		}
 
-//    $this->_createMessage($result);
-
 		return $result;
 	}
 

@@ -55,24 +55,54 @@ class BuyingsController extends ApplicationController
 		$form = $this->getNewByingsForm();
 		if($form->isValid($_POST)){
 			// do some inputting
-				
+
+      $buyings = array();
 			for($i = 0; $i < 10; $i++){
 				if ($form->getValue("product$i")){
 					$product = $form->getValue("product$i");
 					$price = $form->getValue("price$i");
-						
-					$buyings = Table_Buyings::getInstance();
-					$buying = $buyings->createRow();
+					
+					$buying = Table_Buyings::getInstance()->createRow();
 						
 					$buying->setDescription($product);
 					$buying->setPriceInEuro($price);
 					$buying->setResident($this->getCurrentResident());
 						
 					$buying->save();
+
+          $buyings[] = $buying;
 				} else {
 				    break;
 				}
 			}
+      
+      if(!empty($buyings)){
+        # tailor message that going to be sent to the other residents
+        $message = $this->getCurrentResident()->getName();
+        $message .= " hat folgende Dinge gekauft:\n";
+
+        $buying = null;
+        $summ = 0.0;
+        foreach($buyings as $buying){
+          $message .= $buying->getDescription()." für ".$buying->getPriceInEuro()."€\n";
+          $summ += $buying->getPriceInEuro();
+        }
+        $message .= "\nGesammtwert: \t $summ €";
+
+        foreach(Table_Residents::getInstance()->fetchAll() as $resident){
+          if($resident->getId() != $this->getCurrentResident()->getId()){
+            # Send a message to the other residents. Telling them the current one
+            # entered a new buying.
+            $msg = Table_Messages::getInstance()->createRow();
+            $msg->setFrom('System');
+            $msg->setFor($resident);
+            $msg->setTitle('Neuer Einkauf');
+            $msg->setMessage($message);
+            $msg->save();
+          }
+        }
+      }
+      
 			// list byings
 			$this->flash('Einkäufte eingetragen');
 			$this->redirect('index');

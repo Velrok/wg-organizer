@@ -40,3 +40,12 @@ CREATE TABLE IF NOT EXISTS `Residents` (
   `password_hash` varchar(200) NOT NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+
+CREATE TABLE IF NOT EXISTS `Schema` (
+  `key` varchar( 255 ) NOT NULL,
+  `value` varchar( 255 ) NOT NULL,
+  PRIMARY KEY ( `version` )
+);
+
+INSERT INTO  `Schema` (`key` ,`value`) VALUES ('version',  '1');
